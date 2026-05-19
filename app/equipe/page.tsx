@@ -8,33 +8,66 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 const roles = [
   {
     icon: "🌟", title: "Pour la Direction",
-    desc: "Vous accédez enfin à une vision claire de l'activité. Pas d'indicateurs complexes. Pas de tableaux illisibles. Juste l'essentiel pour piloter sereinement votre concession ou votre groupe.",
-    points: ["Une vision simple et unifiée", "Une équipe alignée autour d'un seul outil", "Des données fiables", "Un suivi naturel du business"],
+    desc: "Vous voulez savoir comment tournent vos sites sans appeler le chef des ventes tous les jours. One Data vous donne la vue d'ensemble : leads entrants, transformation, marge, activité des vendeurs, stock à risque.",
+    points: [
+      "Tableaux de bord groupe et par site, mis à jour en temps réel",
+      "Comparaison entre sites, entre marques, entre vendeurs",
+      "Suivi de la performance commerciale sans relancer personne pour avoir les chiffres",
+      "Données fiables (parce que tout le monde utilise le même outil)",
+    ],
   },
   {
     icon: "🚗", title: "Pour les Responsables VO/VN",
-    desc: "Plus rien ne vous échappe, votre management gagne en efficacité. Votre stock est propre, organisé, centralisé. Vous gagnez en clarté, en efficacité et en qualité de décision.",
-    points: ["Un stock toujours à jour", "Des fiches véhicules homogènes", "Un suivi complet de l'activité des vendeurs et de leurs échanges avec leurs clients."],
+    desc: "Votre stock est votre fonds de roulement. Un VO qui dort 90 jours, c'est de l'argent qui dort. One Data vous donne la vision exacte de ce que vous avez, à quel prix, depuis combien de temps, et avec quelle marge.",
+    points: [
+      "Vue stock unifiée par site, par marque, par modèle",
+      "Alertes stock dormant à 30 / 60 / 90 jours",
+      "Marge prévisionnelle et marge réalisée par véhicule",
+      "Suivi de la remise en état (entrée → mise en ligne)",
+      "Pilotage de l'activité commerciale de l'équipe : RPV, opportunités, transformation",
+    ],
   },
   {
     icon: "🤝", title: "Pour les Vendeurs",
-    desc: "Un outil simple, agréable à utiliser. Des informations claires. Des relances organisées. Un vrai soutien dans votre quotidien — pas une contrainte.",
-    points: ["Une interface claire", "Historique complet du client", "Relances faciles à gérer", "Moins de temps perdu, plus de ventes"],
+    desc: "Soyons honnêtes : la plupart des vendeurs détestent leur CRM. Ils trouvent que ça ralentit, que ça ne sert qu'à la direction, qu'ils perdent du temps à saisir. One Data est construit pour leur faire gagner du temps, pas pour les surveiller.",
+    points: [
+      "Vos relances du jour en une page d'accueil",
+      "Un appel se passe → la fiche client s'ouvre toute seule",
+      "Un message WhatsApp arrive → vous y répondez depuis l'outil, pas depuis votre perso",
+      "Un devis se génère en 3 clics depuis l'opportunité",
+      "Votre activité est tracée, vous n'avez plus à faire des comptes-rendus à la main",
+    ],
   },
   {
     icon: "📣", title: "Pour le Marketing",
-    desc: "Vous disposez de données propres et harmonisées. Vous pouvez construire vos segments et vos actions en toute confiance, et sans dépendre d'outils complexes.",
-    points: ["Informations fiables", "Segments faciles à créer", "Communication cohérente", "Vision globale des interactions"],
+    desc: "Si vos données clients sont propres, vous pouvez faire des choses utiles. Si elles sont éparpillées entre 4 outils, vous faites du mailing à l'aveugle. One Data centralise les données et vous laisse construire vos segments sans nous attendre.",
+    points: [
+      "Segmentation par achat, par marque, par ancienneté, par véhicule détenu, par source de lead",
+      "Campagnes SMS et email depuis l'outil, avec suivi",
+      "Mesure du retour des campagnes sur la transformation",
+      "Visibilité sur l'efficacité de chaque source de leads (site, La Centrale, AutoScout, salons)",
+    ],
   },
   {
     icon: "🗂", title: "Pour l'Accueil et les Secrétaires Commerciales",
-    desc: "Enfin un outil simple, lisible, qui rend le quotidien plus fluide. Vous retrouvez tout rapidement, sans manipulation complexe, sans double saisie.",
-    points: ["Accès rapide à l'information", "Interfaces adaptées au besoin", "Moins d'erreurs et de répétitions", "Un travail plus serein"],
+    desc: "Vous êtes la première voix qu'entend le client quand il appelle. Avec One Data, quand un client appelle, sa fiche s'ouvre. Vous savez qui il est, ce qu'il a acheté, qui est son vendeur, et où en est son dossier.",
+    points: [
+      "Identification automatique de l'appelant (VOIP)",
+      "Accès rapide à l'historique complet du client",
+      "Affectation des leads entrants au bon vendeur, en un clic",
+      "Suivi des dossiers en cours sans demander à 4 personnes différentes",
+    ],
   },
   {
     icon: "🖥", title: "Pour le service Informatique",
-    desc: "Un outil stable, simple à maintenir, sans dépendance lourde. Et surtout : un front modifiable en quelques minutes pour que l'outil s'adapte à votre métier et non l'inverse.",
-    points: ["Peu de maintenance", "Autonomie des équipes métier", "Un outil stable et léger"],
+    desc: "One Data est un outil SaaS. Pas de serveur à installer, pas de mises à jour à pousser. La maintenance, c'est nous. Et quand vos équipes métier ont besoin d'un nouveau champ, elles ne passent pas par vous : elles le demandent à leur responsable commercial Oropra, qui le met en prod sous 24h. Vous gagnez la fonctionnalité sans hériter du ticket.",
+    points: [
+      "Hébergement en Europe, sauvegardes quotidiennes",
+      "Conformité RGPD (registre, anonymisation, export, suppression)",
+      "Gestion des rôles et permissions fines",
+      "API REST documentée pour vos intégrations internes",
+      "Logs d'activité et audit trail",
+    ],
   },
 ];
 
@@ -52,12 +85,10 @@ export default function EquipePage() {
               Pour l&apos;équipe
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Une solution qui aide chaque membre de votre équipe.
+              Un CRM auto, ça doit servir à six métiers différents.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Chaque rôle en concession a ses besoins, son rythme, ses priorités. Notre solution
-              apporte à chacun un outil simple, lisible et utile au quotidien. Parce que quand
-              tout le monde travaille avec le même outil, tout devient plus fluide.
+              Une concession, ce n&apos;est pas un seul rôle. La direction, les responsables VO/VN, les vendeurs, l&apos;accueil, le marketing et l&apos;IT n&apos;ont pas les mêmes besoins. One Data ne leur montre pas la même interface. Chacun voit ce qui le concerne.
             </motion.p>
           </motion.div>
         </div>
@@ -93,7 +124,7 @@ export default function EquipePage() {
 
       <section className="py-24 px-4 bg-text-primary">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-5">Une solution qui réunit vos équipes.</h2>
+          <h2 className="text-3xl font-bold text-white mb-5">Un seul outil pour six métiers, c&apos;est ce qui fait la différence.</h2>
           <Button variant="secondary" size="lg" href="mailto:bienvenue@oropra.com" className="bg-white text-text-primary border-white hover:bg-white/90">
             Demander une démo
           </Button>
