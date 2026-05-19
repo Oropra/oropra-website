@@ -8,45 +8,54 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 const features = [
   {
     num: "01", label: "Référentiel Client Unique",
-    title: "Un client = une fiche.",
-    desc: "Informations regroupées, dédupliquées, historiques clairs, accès facile pour tous. Chaque membre de l'équipe retrouve ce dont il a besoin en quelques secondes.",
-    points: ["Fiche unifiée par client", "Historique complet des échanges", "Accès rapide pour toutes les équipes"],
+    title: "Une fiche client, partagée par tous les services.",
+    desc: "La fiche regroupe tout ce que vous savez du client : coordonnées, véhicules détenus, achats passés (VO et VN), passages atelier, opportunités en cours et perdues, communications (appels, messages, mails), documents (devis, BDC, factures), notes des vendeurs.",
+    points: [
+      "Un client rappelle. Sa fiche s'ouvre toute seule grâce à la VOIP. Le vendeur voit son dernier passage et son opportunité en cours.",
+      "Le service après-vente voit qu'une opportunité commerciale est ouverte → il prévient le vendeur.",
+      "Le marketing crée une segmentation \"clients ayant acheté un VN il y a 36 mois\".",
+    ],
     video: "/videos/One-data - fiche client.mp4",
   },
   {
     num: "02", label: "Opportunités",
-    title: "Un suivi structuré, clair et rassurant.",
-    desc: "Étapes visibles, relances organisées… un vrai support pour les vendeurs. Plus jamais une opportunité perdue par manque de suivi.",
-    points: ["Tunnel de vente visuel", "Relances organisées et rappels", "Vue d'ensemble pour les responsables"],
+    title: "Du lead entrant jusqu'au BDC signé.",
+    desc: "Chaque prospect entre dans le pipe avec sa source (site, portail, salon, recommandation), son véhicule cible, son budget, son besoin de reprise. À chaque étape, le vendeur sait ce qui doit être fait : appel, essai, devis, relance.",
+    points: [
+      "Pipeline visuel par vendeur, par site, par marque",
+      "Rapport vendeur (RPV) : la trace de chaque interaction commerciale",
+      "Relances automatiques selon l'étape et l'ancienneté",
+      "Motifs de perte structurés pour analyser ce qui ne se transforme pas",
+    ],
   },
   {
     num: "03", label: "Stock",
-    title: "Votre stock VO/VN, toujours propre et accessible.",
-    desc: "Une vue centralisée, toujours à jour. Chaque véhicule est documenté, localisé et visible par tous. Fini les tableurs éparpillés.",
+    title: "Votre stock, à jour, exploitable.",
+    desc: "Pour le VN : commandes en cours, dates de livraison constructeur, véhicules disponibles. Pour le VO : âge du stock, marge, frais de remise en état, prix d'affichage et historique des baisses. Alertes stock dormant à 30, 60 ou 90 jours.",
     points: ["Vue stock centralisée", "Fiches véhicules homogènes", "Mise à jour en temps réel"],
   },
   {
     num: "04", label: "Communications",
-    title: "Toutes les interactions au même endroit.",
-    desc: "Appels, WhatsApp, SMS, emails : tout est centralisé dans la fiche client. Vos équipes ne perdent plus de temps à chercher.",
+    title: "VOIP, WhatsApp, SMS, email. Sur la fiche client. Sans copier-coller.",
+    desc: "Vos vendeurs n'ont plus besoin de leur téléphone personnel pour le boulot. Tout passe par One Data, tout est rattaché à la bonne fiche, tout reste dans la concession quand un vendeur part.",
     points: ["Appels et SMS centralisés", "WhatsApp et emails intégrés", "Historique de chaque échange"],
   },
   {
     num: "05", label: "Devis & BDC",
-    title: "Des documents propres, faciles à suivre et à partager.",
-    desc: "Des modèles harmonisés pour toute la concession. Les devis et bons de commande sont cohérents, traçables et faciles à gérer.",
+    title: "Des documents propres, du même format dans toute la concession.",
+    desc: "Le devis est généré depuis l'opportunité. Le BDC suit le même modèle, validé par votre direction commerciale. Signature électronique en option. Suivi du cycle de vie : envoyé / vu / accepté / signé / facturé.",
     points: ["Modèles standardisés", "Suivi du statut en temps réel", "Partage facilité"],
   },
   {
     num: "06", label: "Tableaux de bord",
-    title: "L'essentiel, présenté simplement.",
-    desc: "Pas d'indicateurs noyés dans des chiffres complexes. Juste les informations clés pour piloter sereinement l'activité.",
+    title: "Les chiffres qu'on regarde tous les matins.",
+    desc: "Pas un tableau de bord générique avec 200 indicateurs. Quelques chiffres clés, par rôle, mis à jour en temps réel : marge VO et VN, taux de transformation par vendeur, stock dormant, leads non traités, activité commerciale.",
     points: ["Indicateurs clés visibles", "Vue direction et vue équipe", "Données fiables et à jour"],
   },
   {
     num: "07", label: "Formation",
-    title: "Un accompagnement quotidien pendant 14 jours.",
-    desc: "Une méthode douce et progressive pour que chaque utilisateur prenne en main l'outil naturellement, à son rythme.",
+    title: "14 jours pour passer de \"on a un nouveau CRM\" à \"on l'utilise tous\".",
+    desc: "Une heure par jour, par utilisateur, pendant 14 jours ouvrés. Sur vos vraies données. Avec un formateur One Data dédié, en présentiel ou en visio. Adapté au rôle de chaque personne (vendeur, accueil, chef des ventes, direction). Compris dans tous les plans.",
     points: ["1h par jour par utilisateur", "Adaptée à chaque rôle", "Adoption sereine et durable"],
   },
 ];
@@ -65,10 +74,10 @@ export default function FonctionnalitesPage() {
               Fonctionnalités
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Toutes les fonctionnalités dont vous avez besoin, sans complexité.
+              Le détail de ce que One Data fait, fonctionnalité par fonctionnalité.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Nous avons séparé l&apos;essentiel du superflu. Chaque fonctionnalité est pensée pour simplifier le quotidien.
+              Pas de bullet point marketing. Pour chaque fonctionnalité, on vous dit ce que ça fait concrètement, à quel moment du quotidien ça sert, et qui s&apos;en sert.
             </motion.p>
           </motion.div>
         </div>
