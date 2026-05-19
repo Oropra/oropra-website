@@ -20,10 +20,10 @@ export default function AProposPage() {
               À propos
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Une entreprise qui place les équipes au cœur de tout.
+              One Data est édité par Oropra.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Nous avons construit un outil simple, humain et adaptable, car nous croyons que les équipes méritent des solutions qui les soutiennent — pas qui les compliquent.
+              Oropra construit des outils métier pour l&apos;automobile. Notre conviction est simple : les concessions n&apos;ont pas besoin d&apos;un CRM de plus, elles ont besoin d&apos;un outil que leurs équipes utilisent vraiment.
             </motion.p>
           </motion.div>
         </div>
@@ -34,10 +34,13 @@ export default function AProposPage() {
           <motion.div variants={fadeUp}>
             <h2 className="text-3xl font-bold text-text-emphasis mb-5">Un outil né du terrain.</h2>
             <p className="text-text-subtle leading-relaxed mb-4">
-              Nous sommes partis d&apos;un constat simple : dans les concessions, les outils existent, mais ils sont souvent complexes, lourds, peu adoptés.
+              On a passé du temps en concession avant de coder une ligne. On a vu des vendeurs gérer leur portefeuille sur un carnet, des secrétaires faire la liaison entre 4 outils, des directions piloter à partir d&apos;exports Excel hebdomadaires.
+            </p>
+            <p className="text-text-subtle leading-relaxed mb-4">
+              On a aussi vu des CRM auto installés à grand frais, jamais utilisés au bout de six mois. Toujours les mêmes raisons : trop rigide, formation expédiée en 2 jours, pas adapté au métier.
             </p>
             <p className="text-text-subtle leading-relaxed">
-              Nous avons voulu créer l&apos;inverse : une solution que les équipes aiment utiliser. Simple à prendre en main, adaptée au terrain, et accompagnée d&apos;un vrai suivi humain.
+              On a construit One Data pour faire l&apos;inverse.
             </p>
           </motion.div>
           <motion.div variants={fadeUp} className="bg-white rounded-[14px] p-8 border border-border-light shadow-[var(--shadow-default)]">
@@ -86,9 +89,9 @@ export default function AProposPage() {
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Simplicité", desc: "Des outils clairs, qui vont à l'essentiel." },
-              { title: "Proximité", desc: "Un accompagnement humain, quotidien, patient." },
-              { title: "Liberté", desc: "Un outil modulable, qui s'adapte à votre métier, rapidement et facilement." },
+              { title: "Métier d'abord.", desc: "Pas de fonctionnalité ajoutée parce qu'elle fait bien sur une démo. Chaque feature de One Data répond à un besoin terrain documenté." },
+              { title: "Présents quand il faut.", desc: "Quand vous nous appelez, c'est quelqu'un qui connaît votre concession qui décroche." },
+              { title: "Honnêtes sur ce qu'on fait.", desc: "Notre roadmap est publique. Si on ne fait pas quelque chose, on vous le dit. On ne fait pas semblant." },
             ].map((val) => (
               <motion.div key={val.title} variants={fadeUp} className="bg-white rounded-[14px] p-7 border border-border-light shadow-[var(--shadow-default)]">
                 <h3 className="text-xl font-bold text-text-emphasis mb-3">{val.title}</h3>
@@ -103,9 +106,9 @@ export default function AProposPage() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
           <motion.div variants={fadeUp} className="text-center mb-12">
             <p className="text-sm font-semibold text-accent-default uppercase tracking-widest mb-3">Méthode CLAIRE</p>
-            <h2 className="text-3xl font-bold text-text-emphasis mb-4">Notre manière de travailler.</h2>
+            <h2 className="text-3xl font-bold text-text-emphasis mb-4">Concrètement, ça donne quoi ?</h2>
             <p className="text-text-subtle max-w-xl mx-auto">
-              Avec vous, simplement. Nous avançons étape par étape, à votre rythme, disponibles, proches et transparents.
+              On commence par une démo sur vos données, pas une démo générique. Si on signe, on déploie en 3 à 4 semaines. On forme votre équipe pendant 14 jours, une heure par jour, par utilisateur. On ajuste l&apos;outil pendant le premier mois, sur la base de ce qu&apos;on observe. On reste joignables après. Vraiment.
             </p>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-2 lg:grid-cols-4 gap-5">
@@ -127,10 +130,10 @@ export default function AProposPage() {
       <SectionWrapper bg="base">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="max-w-2xl mx-auto text-center">
           <motion.h2 variants={fadeUp} className="text-2xl font-bold text-text-emphasis mb-4">
-            Un outil n&apos;a de valeur que s&apos;il est utilisé.
+            Un CRM qui n&apos;est pas utilisé, c&apos;est de l&apos;argent perdu.
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-subtle leading-relaxed mb-8">
-            C&apos;est pourquoi nous investissons tout dans l&apos;accompagnement : formation 14 jours, présence quotidienne, écoute des équipes, adaptation rapide de l&apos;outil.
+            C&apos;est pour ça que la formation 14 jours est incluse dans tous les plans, sans exception. C&apos;est pour ça que votre responsable commercial Oropra met l&apos;outil à votre main sous 24h, sans ticket. C&apos;est pour ça que notre support est composé des gens qui vous ont formés. On ne mesure pas notre succès au nombre de licences vendues. On le mesure au nombre d&apos;utilisateurs actifs hebdomadaires dans nos concessions clientes. Une question, une demande de démo, un projet : on répond dans la journée.
           </motion.p>
           <motion.div variants={fadeUp}>
             <Button variant="primary" size="lg" href="mailto:bienvenue@oropra.com">Nous contacter</Button>
