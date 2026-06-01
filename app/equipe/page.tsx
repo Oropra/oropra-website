@@ -14,6 +14,7 @@ const roles = [
       "Comparaison entre sites, entre marques, entre vendeurs",
       "Suivi de la performance commerciale sans relancer personne pour avoir les chiffres",
       "Données fiables (parce que tout le monde utilise le même outil)",
+      "Avec le plan Intelligence : brief du matin par Delco, détection de signaux faibles inter-sites, comparaison réseau en une question",
     ],
   },
   {
@@ -25,6 +26,7 @@ const roles = [
       "Marge prévisionnelle et marge réalisée par véhicule",
       "Suivi de la remise en état (entrée → mise en ligne)",
       "Pilotage de l'activité commerciale de l'équipe : RPV, opportunités, transformation",
+      "Avec le plan Intelligence : Delco vous remonte le coaching équipe (\"Sandra convertit à 75 %, l'équipe à 94 %\") et les opportunités à prioriser",
     ],
   },
   {
@@ -36,6 +38,7 @@ const roles = [
       "Un message WhatsApp arrive → vous y répondez depuis l'outil, pas depuis votre perso",
       "Un devis se génère en 3 clics depuis l'opportunité",
       "Votre activité est tracée, vous n'avez plus à faire des comptes-rendus à la main",
+      "Avec le plan Intelligence : Delco vous signale en priorité les leads sans action, les propales qui dorment, et vous suggère votre prochaine action",
     ],
   },
   {

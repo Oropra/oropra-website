@@ -64,9 +64,9 @@ export default function SupportPage() {
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { icon: "💬", title: "Essentiel", desc: "Chat et email — réponse en moins de 4h ouvrées." },
-              { icon: "🤝", title: "Standard", desc: "Chat et email < 2h ouvrées. Téléphone 9h–18h." },
-              { icon: "👁", title: "Groupe", desc: "Chat et email < 1h ouvrée. Téléphone 8h–20h. 7j/7 sur incidents critiques." },
+              { icon: "💬", title: "Performance", desc: "Chat et email — réponse en moins de 4h ouvrées." },
+              { icon: "🤝", title: "Connect", desc: "Chat et email < 2h ouvrées. Téléphone 9h–18h." },
+              { icon: "👁", title: "Intelligence", desc: "Chat et email < 1h ouvrée. Téléphone 8h–20h. 7j/7 sur incidents critiques." },
             ].map((item) => (
               <motion.div key={item.title} variants={fadeUp} className="bg-bg-base rounded-[14px] p-6 border border-border-light text-center">
                 <span className="text-3xl mb-3 block">{item.icon}</span>

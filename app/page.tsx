@@ -138,6 +138,7 @@ export default function Home() {
                 "Vos appels, WhatsApp, SMS, emails — rattachés à la bonne fiche, automatiquement",
                 "Vos devis et bons de commande, harmonisés et traçables",
                 "Vos tableaux de bord : marge VO, taux de transformation, stock dormant, activité vendeur",
+                "Avec Delco : une IA qui surveille votre activité et vous dit quoi faire en priorité",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle2 size={18} className="text-accent-default mt-0.5 shrink-0" />
