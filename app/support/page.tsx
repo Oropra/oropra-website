@@ -20,10 +20,10 @@ export default function SupportPage() {
               Support
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Un support humain. Un accompagnement quotidien. Une adoption garantie.
+              Le support, c&apos;est nous. Pas un centre d&apos;appel à l&apos;autre bout du monde.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Nous restons à vos côtés avant, pendant et après l&apos;installation. Parce que la réussite d&apos;un outil dépend d&apos;abord des équipes qui l&apos;utilisent.
+              Vous parlez à des gens qui connaissent votre concession, votre paramétrage, vos vendeurs. Le support One Data, c&apos;est l&apos;équipe qui vous a formés au démarrage. Pas un ticket dans une file d&apos;attente.
             </motion.p>
           </motion.div>
         </div>
@@ -33,17 +33,17 @@ export default function SupportPage() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeUp}>
             <ServiceTag service="formation" className="mb-5" />
-            <h2 className="text-3xl font-bold text-text-emphasis mb-5">Une méthode simple, progressive et efficace.</h2>
+            <h2 className="text-3xl font-bold text-text-emphasis mb-5">La méthode 14 jours, en détail</h2>
             <p className="text-text-subtle leading-relaxed">
-              Chaque utilisateur est accompagné pendant 14 jours, une heure par jour. On avance doucement, on répond aux questions, on prend le temps d&apos;installer des habitudes.
+              14 jours ouvrés. Une heure par jour. Par utilisateur. Sur vos vraies données. C&apos;est notre engagement le plus important, et c&apos;est ce qui fait que One Data est utilisé là où d&apos;autres CRM finissent à la poubelle au bout de 3 mois.
             </p>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-2 gap-4">
             {[
-              { label: "1h par jour", sub: "par utilisateur" },
-              { label: "Progression", sub: "naturelle" },
-              { label: "Adaptée", sub: "à chaque rôle" },
-              { label: "Adoption", sub: "sereine" },
+              { label: "Formateur dédié", sub: "pendant 14 jours" },
+              { label: "1h par session", sub: "présentiel ou visio" },
+              { label: "Adapté", sub: "par rôle" },
+              { label: "Données réelles", sub: "pas un environnement démo" },
             ].map((item) => (
               <motion.div key={item.label} variants={fadeUp} className="bg-white rounded-[14px] p-5 border border-border-light text-center shadow-[var(--shadow-default)]">
                 <p className="font-bold text-text-emphasis">{item.label}</p>
@@ -57,16 +57,16 @@ export default function SupportPage() {
       <SectionWrapper bg="white">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="max-w-3xl mx-auto">
           <motion.div variants={fadeUp} className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-text-emphasis mb-4">Nous restons proches de vous.</h2>
+            <h2 className="text-3xl font-bold text-text-emphasis mb-4">Une fois la formation finie, on ne vous lâche pas.</h2>
             <p className="text-text-subtle leading-relaxed">
-              Notre support est réactif, humain et attentif. Nous vous connaissons, nous connaissons vos équipes. Vous n&apos;êtes jamais seuls.
+              Le mois suivant la fin de la formation, un point hebdomadaire avec votre référent One Data. Ensuite, support par chat, email et téléphone (selon votre plan), avec des temps de réponse engagés.
             </p>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { icon: "💬", title: "Réactif", desc: "Une réponse rapide à chaque question." },
-              { icon: "🤝", title: "Humain", desc: "On se connaît, on parle le même langage." },
-              { icon: "👁", title: "Attentif", desc: "On suit vos besoins et on s'adapte." },
+              { icon: "💬", title: "Performance", desc: "Chat et email — réponse en moins de 4h ouvrées." },
+              { icon: "🤝", title: "Connect", desc: "Chat et email < 2h ouvrées. Téléphone 9h–18h." },
+              { icon: "👁", title: "Intelligence", desc: "Chat et email < 1h ouvrée. Téléphone 8h–20h. 7j/7 sur incidents critiques." },
             ].map((item) => (
               <motion.div key={item.title} variants={fadeUp} className="bg-bg-base rounded-[14px] p-6 border border-border-light text-center">
                 <span className="text-3xl mb-3 block">{item.icon}</span>
@@ -81,13 +81,14 @@ export default function SupportPage() {
       <SectionWrapper bg="base">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="max-w-2xl mx-auto">
           <motion.div variants={fadeUp} className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-text-emphasis mb-3">Des contenus simples et accessibles.</h2>
+            <h2 className="text-2xl font-bold text-text-emphasis mb-3">Centre d&apos;aide : tout est documenté.</h2>
           </motion.div>
           <motion.div variants={stagger} className="space-y-3">
             {[
-              { icon: "🎬", label: "Vidéos d'usage courtes" },
-              { icon: "📋", label: "Guides étape par étape" },
-              { icon: "📚", label: "Articles pour aller plus loin" },
+              { icon: "🎬", label: "Vidéos d'usage courtes (1 à 3 minutes), par fonctionnalité" },
+              { icon: "📋", label: "Guides étape par étape, avec captures" },
+              { icon: "📚", label: "Articles de fond pour aller plus loin (paramétrage avancé, intégrations)" },
+              { icon: "🔔", label: "Notes de version : ce qui change à chaque mise à jour" },
             ].map((item) => (
               <motion.div key={item.label} variants={fadeUp} className="bg-white rounded-xl px-5 py-4 border border-border-light flex items-center gap-4">
                 <span className="text-xl">{item.icon}</span>

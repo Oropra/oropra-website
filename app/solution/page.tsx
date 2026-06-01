@@ -8,12 +8,13 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 import ServiceTag from "@/components/ui/ServiceTag";
 
 const modules = [
-  { title: "Clients", desc: "Une fiche claire, un historique complet.", icon: "👤", topColor: "bg-service-blue" },
-  { title: "Opportunités", desc: "Un suivi qui rassure et structure le quotidien.", icon: "🎯", topColor: "bg-service-green" },
-  { title: "Stock VO/VN", desc: "Une vue centralisée, toujours à jour.", icon: "🚗", topColor: "bg-service-orange" },
-  { title: "Communications", desc: "Appels, WhatsApp, SMS, emails, tout au même endroit.", icon: "💬", topColor: "bg-accent-light" },
-  { title: "Devis & BDC", desc: "Des documents harmonisés, faciles à suivre.", icon: "📄", topColor: "bg-service-green" },
-  { title: "Tableaux de bord", desc: "Une vision simple de l'activité de votre concession.", icon: "📊", topColor: "bg-service-blue" },
+  { title: "Référentiel client", desc: "Une fiche par client, partagée entre tous les services. Achats, contacts, véhicules, passages atelier, opportunités en cours : tout est là.", icon: "👤", topColor: "bg-service-blue" },
+  { title: "Prospects & opportunités", desc: "Du premier lead (site web, La Centrale, AutoScout24, appel entrant) jusqu'au BDC signé. Avec les étapes, les relances et les motifs de perte.", icon: "🎯", topColor: "bg-service-green" },
+  { title: "Stock VO & VN", desc: "Vue centralisée par site, par marque, par modèle. Délais constructeur pour le VN, âge du stock et marge pour le VO.", icon: "🚗", topColor: "bg-service-orange" },
+  { title: "Communications unifiées", desc: "Appel VOIP, WhatsApp, SMS, email. Tous les échanges sont rattachés à la fiche client, automatiquement. Plus de \"il m'a appelé sur mon perso, je sais plus quand\".", icon: "💬", topColor: "bg-accent-light" },
+  { title: "Devis & BDC", desc: "Génération depuis la fiche opportunité, modèles personnalisables par marque, signature électronique, suivi du cycle de vie du document.", icon: "📄", topColor: "bg-service-green" },
+  { title: "Tableaux de bord", desc: "Marge VO, taux de transformation par vendeur, stock dormant à plus de 60 jours, leads non traités à J+1. Pour la direction comme pour les chefs des ventes.", icon: "📊", topColor: "bg-service-blue" },
+  { title: "Delco, le copilote IA", desc: "Un agent IA qui surveille votre activité, vous suggère vos prochaines actions et répond à vos questions en langage naturel. Adapté à votre rôle. Disponible avec le plan Intelligence.", icon: "🤖", topColor: "bg-[#2a5ea9]", badge: "Plan Intelligence" },
 ];
 
 export default function SolutionPage() {
@@ -30,11 +31,10 @@ export default function SolutionPage() {
               La Solution
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Tout ce dont une concession a besoin, dans un outil simple.
+              One Data, en une page.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Clients, opportunités, stock, communications : tout est réuni dans une interface
-              lisible et agréable. Chaque équipe retrouve instantanément ce dont elle a besoin.
+              One Data est un CRM construit pour les concessions automobiles. Il couvre le client (référentiel et historique), le commerce (prospects, opportunités, devis, BDC), le stock (VO et VN), la communication (VOIP, WhatsApp, SMS, email) et le pilotage (tableaux de bord). Il s&apos;adapte à votre organisation, pas l&apos;inverse.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="primary-dark" size="lg" href="mailto:bienvenue@oropra.com">
@@ -52,7 +52,7 @@ export default function SolutionPage() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-bold text-text-emphasis mb-3">
-              Les fonctionnalités essentielles, simplement présentées.
+              Sept modules. Connectés entre eux. Couvrant tout le métier.
             </h2>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -64,10 +64,79 @@ export default function SolutionPage() {
               >
                 <div className={`absolute top-0 left-0 right-0 h-1 ${m.topColor}`} />
                 <span className="text-3xl mb-4 block">{m.icon}</span>
-                <h3 className="font-bold text-text-emphasis mb-2">{m.title}</h3>
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <h3 className="font-bold text-text-emphasis">{m.title}</h3>
+                  {"badge" in m && m.badge && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[rgba(42,94,169,0.1)] text-[#2a5ea9]">{m.badge}</span>
+                  )}
+                </div>
                 <p className="text-sm text-text-subtle leading-relaxed">{m.desc}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </motion.div>
+      </SectionWrapper>
+
+      {/* COMMUNICATION UNIFIÉE — ZOOM */}
+      <SectionWrapper bg="white">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
+          <motion.div variants={fadeUp} className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-text-emphasis mb-6">
+              La fonctionnalité que personne d&apos;autre ne fait correctement.
+            </h2>
+            <p className="text-text-subtle leading-relaxed mb-4">
+              Dans 90 % des concessions, les vendeurs utilisent leur téléphone personnel pour appeler les clients, leur compte WhatsApp perso pour échanger des photos, leur boîte mail perso pour envoyer des devis. Quand un vendeur part, l&apos;historique part avec lui. Quand un client rappelle, personne ne sait ce qui a été dit.
+            </p>
+            <p className="text-text-subtle leading-relaxed mb-6">One Data centralise tout :</p>
+            <ul className="space-y-3 mb-6">
+              {[
+                "VOIP intégrée : les appels sortants et entrants sont enregistrés (si vous le souhaitez) et rattachés à la fiche client.",
+                "WhatsApp Business : un seul numéro pour la concession, vu par tous les vendeurs autorisés. Les messages arrivent dans la fiche client. Les photos de reprise envoyées par le client sont stockées avec l'opportunité.",
+                "SMS : campagnes de relance et messages individuels, depuis l'outil.",
+                "Email : envoi depuis la fiche, suivi des ouvertures, modèles partagés.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 size={18} className="text-accent-default mt-0.5 shrink-0" />
+                  <span className="text-text-secondary">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="font-semibold text-text-emphasis">
+              Quand un vendeur part, l&apos;historique reste. Quand un client rappelle, la fiche s&apos;ouvre.
+            </p>
+          </motion.div>
+        </motion.div>
+      </SectionWrapper>
+
+      {/* DELCO ZOOM */}
+      <SectionWrapper bg="base">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
+          <motion.div variants={fadeUp} className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              <h2 className="text-3xl font-bold text-text-emphasis">
+                Et au-dessus de tout ça, une IA qui vous fait gagner les heures de tableur.
+              </h2>
+            </div>
+            <p className="text-sm text-text-faint italic mb-4">Disponible avec le plan Intelligence.</p>
+            <p className="text-text-subtle leading-relaxed mb-6">
+              Delco est un agent IA branché sur l&apos;ensemble de votre activité One Data. Il surveille, il analyse, il vous remonte ce qui mérite votre attention. Sa particularité : il s&apos;adapte à votre rôle. Le vendeur, le chef des ventes et le directeur ne voient pas la même chose. Même agent, trois intelligences.
+            </p>
+            <ul className="space-y-3 mb-6">
+              {[
+                { label: "Surveillance en continu", body: "signaux actionnables remontés par rôle (leads sans action, propales qui dorment, sites qui décrochent)" },
+                { label: "Recherche conversationnelle", body: "\"Combien de VO de plus de 180 jours ?\" — réponse immédiate" },
+                { label: "Pilotage à la demande", body: "brief du matin, synthèse pipeline, comparaison de sites" },
+                { label: "Exports PDF / Excel", body: "tout résultat de Delco s'exporte en un clic, prêt à partager" },
+              ].map((item) => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-[#2a5ea9] shrink-0 mt-1.5" />
+                  <span className="text-text-secondary"><strong>{item.label}</strong> : {item.body}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="font-semibold text-text-emphasis">
+              Une heure de comité de direction préparée en 30 secondes.
+            </p>
           </motion.div>
         </motion.div>
       </SectionWrapper>
@@ -83,14 +152,20 @@ export default function SolutionPage() {
           <motion.div variants={fadeUp}>
             <ServiceTag service="deploiement" className="mb-5" />
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis mb-5">
-              Votre outil s&apos;adapte à votre métier.
+              Vous n&apos;allez plus attendre 6 mois pour un champ supplémentaire. Ni 6 jours.
             </h2>
+            <p className="text-text-subtle leading-relaxed mb-4">
+              Vous ne modifierez pas l&apos;outil vous-même. Et c&apos;est tant mieux : vous avez mieux à faire que de configurer un CRM. C&apos;est votre responsable commercial Oropra qui s&apos;en charge — et il est formé à WeWeb, la techno qui propulse One Data.
+            </p>
             <p className="text-text-subtle leading-relaxed mb-8">
-              Chaque concession a ses process. C&apos;est pourquoi vous pouvez ajuster
-              l&apos;interface : champs, formulaires, écrans… Tout se fait en quelques minutes.
+              Vous lui exposez votre besoin en langage métier (&quot;on aimerait un champ pour suivre les reprises avec malus écologique&quot;). Il traduit, il configure, et c&apos;est en prod. 80 % des demandes en moins de 24 heures. Pas de ticket à ouvrir. Pas de support de niveau 1 / niveau 2 / niveau 3. Pas de devis pour un champ.
             </p>
             <ul className="space-y-3">
-              {["Aucune limite technique à vos demandes d'adaptation", "Ajustements quasi immédiats", "Plus besoin d'ouvrir un ticket dans l'espoir qu'il reste de la place dans la roadmap de l'éditeur"].map((p) => (
+              {[
+                "80 % des demandes en prod sous 24 heures, ouvré",
+                "Un seul interlocuteur : votre responsable commercial Oropra, qui connaît votre concession",
+                "Une demande en langage métier, pas un cahier des charges technique",
+              ].map((p) => (
                 <li key={p} className="flex items-center gap-3">
                   <CheckCircle2 size={18} className="text-accent-default shrink-0" />
                   <span className="text-text-secondary">{p}</span>
@@ -112,7 +187,7 @@ export default function SolutionPage() {
         </motion.div>
       </SectionWrapper>
 
-      <SectionWrapper bg="base">
+      <SectionWrapper bg="white">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -123,11 +198,12 @@ export default function SolutionPage() {
           <motion.div variants={fadeUp} className="text-center mb-12">
             <ServiceTag service="formation" className="mb-5" />
             <h2 className="text-3xl font-bold text-text-emphasis mb-4">
-              Nous restons avec vous dès le premier jour.
+              De la signature à l&apos;utilisation quotidienne : 3 à 4 semaines.
             </h2>
             <p className="text-text-subtle leading-relaxed">
-              Notre méthode embarque toute votre équipe : 1h par jour, pendant 14 jours.
-              Une approche humaine, progressive, qui assure une adoption naturelle.
+              <strong>Semaine 1</strong> : reprise de vos données existantes (clients, stock, opportunités en cours), paramétrage de vos marques, de vos sites et de vos rôles.<br />
+              <strong>Semaines 2 et 3</strong> : formation 14 jours, une heure par jour, par utilisateur. Sur vos vraies données.<br />
+              <strong>Semaine 4</strong> : ajustements, support rapproché, démarrage en autonomie.
             </p>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -146,7 +222,7 @@ export default function SolutionPage() {
         </motion.div>
       </SectionWrapper>
 
-      <SectionWrapper bg="white">
+      <SectionWrapper bg="base">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -155,11 +231,10 @@ export default function SolutionPage() {
           className="text-center max-w-2xl mx-auto"
         >
           <h2 className="text-3xl font-bold text-text-emphasis mb-5">
-            L&apos;outil devient un réflexe, pas une contrainte.
+            Un CRM qui n&apos;est pas utilisé, c&apos;est de l&apos;argent perdu.
           </h2>
           <p className="text-text-subtle leading-relaxed mb-8">
-            Quand un outil est simple, adapté et bien expliqué, il devient naturellement
-            utilisé. Les équipes gagnent en fluidité, en coordination et en confort de travail.
+            Envie de voir One Data tourner sur vos données ? C&apos;est pour ça que la formation 14 jours est incluse dans tous les plans, sans exception. C&apos;est pour ça que votre responsable commercial Oropra adapte l&apos;outil à vos besoins en moins de 24 heures, sans ticket. On ne mesure pas notre succès au nombre de licences vendues. On le mesure au nombre d&apos;utilisateurs actifs hebdomadaires.
           </p>
           <Button variant="primary" size="lg" href="mailto:bienvenue@oropra.com">
             Demander une démo

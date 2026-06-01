@@ -38,15 +38,13 @@ export default function Home() {
               variants={fadeUp}
               className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]"
             >
-              L&apos;outil qui épouse enfin les méthodes de vos équipes et plus jamais l&apos;inverse.
+              Le CRM des concessions auto, fait pour être utilisé tous les jours.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]"
             >
-              Une plateforme pensée pour le quotidien : clients, opportunités, stock et
-              communications réunis au même endroit. Adaptable en quelques minutes,
-              accompagnée pas à pas pendant 14 jours pour une adoption sereine par toute votre équipe
+              One Data réunit clients, prospects, stock VO/VN et toutes les communications (appels, WhatsApp, SMS, emails) dans un seul outil. Vos équipes sont formées une heure par jour pendant 14 jours. Au bout de deux semaines, tout le monde s&apos;en sert.
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -56,7 +54,7 @@ export default function Home() {
                 Demander une démo
               </Button>
               <Button variant="secondary-dark" size="lg" href="/solution">
-                Découvrir le produit
+                Voir les fonctionnalités
                 <ArrowRight size={16} className="ml-2" />
               </Button>
             </motion.div>
@@ -74,12 +72,10 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis mb-4">
-              Une solution créée pour s&apos;adapter à la vie des équipes.
+              Trois choses que les autres CRM auto ne font pas.
             </h2>
             <p className="text-text-subtle leading-relaxed">
-              Nous avons conçu un outil qui se prend en main naturellement, qui s&apos;adapte
-              facilement à votre façon de travailler, et qui accompagne toutes les équipes —
-              de la direction jusqu&apos;à l&apos;accueil. Un outil qui clarifie, allège, synchronise.
+              On vous montre ci-dessous les trois différences qui comptent vraiment au quotidien.
             </p>
           </motion.div>
 
@@ -88,20 +84,20 @@ export default function Home() {
               {
                 icon: <Zap size={22} className="text-service-blue" />,
                 iconBg: "bg-service-blue/10",
-                title: "Simple à utiliser",
-                desc: "Une interface claire que toute l'équipe adopte rapidement.",
+                title: "Toutes les communications client, au même endroit.",
+                desc: "Appel VOIP, message WhatsApp, SMS, email : tout est rattaché automatiquement à la fiche du client. Plus de captures d'écran, plus de \"j'ai pas eu l'info\".",
               },
               {
                 icon: <Users size={22} className="text-service-green" />,
                 iconBg: "bg-service-green/10",
-                title: "Proche du terrain",
-                desc: "Nous accompagnons chaque utilisateur pendant 14 jours pour une parfaite appropriation",
+                title: "Adaptez l'outil à votre métier sans ouvrir un ticket.",
+                desc: "Vous demandez un nouveau champ, un écran adapté, un formulaire revu ? Votre responsable commercial Oropra s'en charge. 80 % des demandes sont en prod sous 24h. Pas de support à passer.",
               },
               {
                 icon: <Sliders size={22} className="text-service-orange" />,
                 iconBg: "bg-service-orange/10",
-                title: "Libre et adaptable",
-                desc: "Votre outil évolue avec vous : ajustez-le en quelques minutes.",
+                title: "Une équipe formée en 14 jours.",
+                desc: "Une heure par jour, sur leur poste, avec leurs vraies données. Pas une démo générique. À J+15, l'outil est utilisé.",
               },
             ].map((card) => (
               <motion.div
@@ -131,16 +127,18 @@ export default function Home() {
         >
           <motion.div variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis mb-8">
-              Tout votre quotidien, enfin réuni et simplifié.
+              Une concession, c&apos;est une centaine de choses à suivre. One Data en prend en charge l&apos;essentiel.
             </h2>
             <ul className="space-y-4">
               {[
-                "Suivre vos clients et historiser leurs échanges",
-                "Piloter vos opportunités et vos relances",
-                "Visualiser votre stock VO/VN en un coup d'œil",
-                "Centraliser appels, WhatsApp, SMS et emails",
-                "Harmoniser l'information entre les équipes",
-                "Gagner du temps… tous les jours",
+                "Vos clients et toute leur histoire avec la concession (achats, services, contacts)",
+                "Vos prospects et vos opportunités, du premier contact jusqu'au BDC signé",
+                "Votre stock VO et VN, avec les délais constructeur et le suivi de marge",
+                "Vos relances : automatisées, planifiées, ou déclenchées à la main",
+                "Vos appels, WhatsApp, SMS, emails — rattachés à la bonne fiche, automatiquement",
+                "Vos devis et bons de commande, harmonisés et traçables",
+                "Vos tableaux de bord : marge VO, taux de transformation, stock dormant, activité vendeur",
+                "Avec Delco : une IA qui surveille votre activité et vous dit quoi faire en priorité",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle2 size={18} className="text-accent-default mt-0.5 shrink-0" />
@@ -258,25 +256,25 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis">
-              Nous croyons que la simplicité change tout.
+              Ce qui change par rapport à ce que vous connaissez.
             </h2>
           </motion.div>
 
           <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Simplicité",
-                desc: "Une interface fluide et intuitive. Pas de complexité inutile.",
+                title: "Un seul outil, pas un patchwork.",
+                desc: "Vos vendeurs n'ont plus à jongler entre le CRM, leur téléphone perso, leur boîte mail et un tableur partagé. Tout passe par One Data, et tout est tracé.",
                 borderColor: "border-accent-default",
               },
               {
-                title: "Proximité",
-                desc: "14 jours de formation quotidienne pour embarquer toute l'équipe.",
+                title: "Adieu les tickets, adieu les délais.",
+                desc: "Votre interlocuteur Oropra connaît votre concession, vos vendeurs, vos process. Il est formé à WeWeb (la techno de l'outil). Vous lui demandez un changement métier — pas un ticket technique. 80 % des demandes traitées en moins de 24h.",
                 borderColor: "border-service-green",
               },
               {
-                title: "Liberté",
-                desc: "Vous adaptez l'outil à votre métier, en quelques heures.",
+                title: "Une formation qui ne se termine pas en démo PowerPoint.",
+                desc: "Pendant 14 jours, on est sur place ou en visio avec chaque utilisateur, une heure par jour. Vendeurs, accueil, direction. Tout le monde.",
                 borderColor: "border-service-orange",
               },
             ].map((col) => (
@@ -293,7 +291,7 @@ export default function Home() {
         </motion.div>
       </SectionWrapper>
 
-      {/* TÉMOIGNAGES */}
+      {/* SITES PILOTES */}
       <SectionWrapper bg="base">
         <motion.div
           initial="hidden"
@@ -303,28 +301,28 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis mb-3">
-              Des résultats concrets
+              Déjà déployé sur les premiers sites pilotes.
             </h2>
           </motion.div>
 
           <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                quote: "En 14 jours toute mon équipe était autonome. Je n'aurais pas cru ça possible.",
-                author: "Christine L.",
-                company: "Chef des ventes VO",
+                quote: "Plusieurs concessions équipées en France, dans des configurations variées (indépendantes, multi-marques, groupes).",
+                author: "Sites pilotes en activité",
+                company: "Premières concessions partenaires",
                 topColor: "bg-service-blue",
               },
               {
-                quote: "L'adhésion immédiate des équipes rend cet outil redoutablement puissant. Il a bouleversé le management des équipes commerciales et la qualité de la relation perçue par nos clients. Le cœur de notre métier en somme...",
-                author: "Charles R.",
-                company: "Directeur de concession",
+                quote: "Vendeurs, accueil, responsables VO/VN, direction : One Data est utilisé par l'ensemble des équipes dans les sites pilotes.",
+                author: "Tous les rôles concernés",
+                company: "Du vendeur à la direction",
                 topColor: "bg-service-green",
               },
               {
-                quote: "J'avoue que je ne me vois pas du tout faire machine arrière depuis qu'on nous a mis en main cet outil. Mention spéciale pour la gestion des ventes qui me permet de voir tout mon pipe commercial en un seul coup d'œil !",
-                author: "Maxime B.",
-                company: "Vendeur VN",
+                quote: "Les retours des sites pilotes alimentent directement nos évolutions hebdomadaires. Pas de feedback dans un agenda à 6 mois.",
+                author: "Une roadmap nourrie par le terrain",
+                company: "Évolutions continues",
                 topColor: "bg-service-orange",
               },
             ].map((t) => (
@@ -364,12 +362,10 @@ export default function Home() {
           <motion.div variants={fadeUp}>
             <ServiceTag service="formation" className="mb-5" />
             <h2 className="text-3xl sm:text-4xl font-bold text-text-emphasis mb-5">
-              Un accompagnement qui change vraiment la donne.
+              14 jours pour qu&apos;un CRM devienne un réflexe.
             </h2>
             <p className="text-text-subtle leading-relaxed mb-8">
-              Pendant 14 jours, nous formons chaque membre de votre équipe, une heure par
-              jour. Pas à pas, à votre rythme. Tout le monde prend en main l&apos;outil
-              sereinement et durablement.
+              Un CRM qui n&apos;est pas utilisé ne sert à rien. C&apos;est pour ça qu&apos;on accompagne chaque utilisateur, une heure par jour, pendant 14 jours. On forme sur leurs vraies données, dans leurs vrais cas. Vendeurs, accueil, responsables, direction : chacun apprend ce dont il a besoin, à son rythme.
             </p>
             <Button variant="primary" size="md" href="mailto:bienvenue@oropra.com">
               Demander une démo
@@ -378,10 +374,10 @@ export default function Home() {
 
           <motion.div variants={stagger} className="grid grid-cols-2 gap-4">
             {[
-              { label: "Simple et progressif", icon: "📈" },
-              { label: "1h / jour / utilisateur", icon: "⏱" },
-              { label: "Présence humaine", icon: "🤝" },
-              { label: "Adoption garantie", icon: "✅" },
+              { label: "1 heure par jour, par utilisateur", icon: "📈" },
+              { label: "Formation sur leurs vraies données, pas sur un environnement de démo", icon: "⏱" },
+              { label: "Présentiel ou visio, selon ce qui marche pour vous", icon: "🤝" },
+              { label: "À J+15, l'outil est utilisé. Pas testé. Utilisé.", icon: "✅" },
             ].map((item) => (
               <motion.div
                 key={item.label}
@@ -409,10 +405,10 @@ export default function Home() {
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-bold text-white mb-5"
           >
-            Envie de découvrir la solution ?
+            Vous voulez voir ce que ça donne sur vos données ?
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/70 mb-8 leading-relaxed">
-            Échangeons sur vos besoins. Une démonstration, sans engagement.
+            On installe une démo en 48h avec vos marques, vos sites et un échantillon de vos données.
           </motion.p>
           <motion.div variants={fadeUp}>
             <Button
@@ -421,7 +417,7 @@ export default function Home() {
               href="mailto:bienvenue@oropra.com"
               className="bg-white text-text-primary border-white hover:bg-white/90"
             >
-              Demander une démonstration
+              Demander une démo
             </Button>
           </motion.div>
         </motion.div>

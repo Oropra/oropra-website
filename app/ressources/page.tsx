@@ -7,16 +7,19 @@ import Button from "@/components/ui/Button";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const articles = [
-  { title: "Comment simplifier l'organisation commerciale ?", tag: "Conseil", readTime: "4 min" },
-  { title: "Les bonnes habitudes pour un suivi client serein", tag: "Méthode", readTime: "5 min" },
-  { title: "Structurer ses relances sans stress", tag: "Conseil", readTime: "3 min" },
-  { title: "Harmoniser les informations entre équipes", tag: "Organisation", readTime: "4 min" },
+  { title: "Pourquoi 70 % des CRM auto ne sont pas utilisés (et comment éviter ça)", tag: "Conseil", readTime: "5 min" },
+  { title: "Le coût réel d'un VO qui dort 90 jours", tag: "Analyse", readTime: "4 min" },
+  { title: "Comment harmoniser un process commercial entre 5 sites sans tout rigidifier", tag: "Méthode", readTime: "5 min" },
+  { title: "WhatsApp en concession : pratiques, dérives, et comment cadrer sans casser la relation client", tag: "Pratique", readTime: "4 min" },
+  { title: "Le rapport vendeur (RPV) : à quoi ça sert, pourquoi tout le monde le rate", tag: "Méthode", readTime: "3 min" },
+  { title: "Lead entrant à 18h le vendredi : combien de fois il est rappelé le lundi matin ?", tag: "Analyse", readTime: "3 min" },
 ];
 
 const guides = [
-  "Harmoniser vos données clients sans complexité",
-  "Comment embarquer une équipe sur un nouvel outil ?",
-  "Construire un process commercial fluide",
+  "Le guide de la reprise du référentiel client — comment nettoyer, dédoublonner et migrer",
+  "Embarquer une équipe sur un nouvel outil — méthode 14 jours, jour par jour",
+  "Construire un pipeline commercial en concession — étapes, motifs de perte, indicateurs",
+  "RGPD en concession — ce qu'il faut faire, ce qui est secondaire",
 ];
 
 export default function RessourcesPage() {
@@ -33,10 +36,10 @@ export default function RessourcesPage() {
               Ressources
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
-              Ressources pour accompagner vos équipes.
+              Des contenus utiles pour le métier, pas des livres blancs de 80 pages.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
-              Des contenus simples, utiles, concrets : idées, méthodes, exemples… De quoi améliorer l&apos;organisation et accompagner les évolutions du métier.
+              On publie ce qu&apos;on apprend en travaillant avec des concessions. Méthodes, retours d&apos;expérience, exemples concrets. Lisible en 5 minutes.
             </motion.p>
           </motion.div>
         </div>
@@ -45,7 +48,7 @@ export default function RessourcesPage() {
       <SectionWrapper bg="base">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
           <motion.div variants={fadeUp} className="mb-10">
-            <h2 className="text-2xl font-bold text-text-emphasis mb-2">Des conseils pratiques pour le quotidien en concession.</h2>
+            <h2 className="text-2xl font-bold text-text-emphasis mb-2">Les articles du blog One Data</h2>
             <p className="text-sm text-text-faint">Blog</p>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -89,9 +92,9 @@ export default function RessourcesPage() {
 
       <SectionWrapper bg="base">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="text-center max-w-2xl mx-auto">
-          <motion.h2 variants={fadeUp} className="text-2xl font-bold text-text-emphasis mb-4">Des histoires vécues, racontées par les équipes.</motion.h2>
+          <motion.h2 variants={fadeUp} className="text-2xl font-bold text-text-emphasis mb-4">Bientôt : les retours des sites pilotes.</motion.h2>
           <motion.p variants={fadeUp} className="text-text-subtle leading-relaxed mb-8">
-            Découvrez comment des concessions ont simplifié leur quotidien, amélioré leur coordination et gagné en sérénité.
+            Nos premières concessions partenaires utilisent One Data au quotidien depuis quelques semaines. Nous publierons ici leurs retours dans les prochains mois : volume de leads avant/après, taux de transformation, temps moyen de remise en état d&apos;un VO, gains de productivité côté vendeurs et accueil. Sans habillage marketing : ce qui marche, ce qui a pris du temps, ce qu&apos;ils auraient voulu savoir avant.
           </motion.p>
           <motion.div variants={fadeUp}>
             <Button variant="primary" size="lg" href="mailto:bienvenue@oropra.com">Voir toutes les ressources</Button>

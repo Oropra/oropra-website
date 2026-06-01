@@ -12,13 +12,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Oropra — CRM no-code pour concessions automobiles",
+  title: "One Data — CRM pour concessions automobiles",
   description:
-    "Oropra simplifie le quotidien des équipes en concession : clients, opportunités, stock, communications réunis dans un outil simple, adaptable et accompagné.",
+    "One Data réunit clients, opportunités, stock VO/VN et communications dans un seul CRM pour les concessions. Formez votre équipe en 14 jours. Adapté à votre métier sous 24h.",
   openGraph: {
-    title: "Oropra — CRM no-code pour concessions automobiles",
+    title: "One Data — CRM pour concessions automobiles",
     description:
-      "Oropra simplifie le quotidien des équipes en concession : clients, opportunités, stock, communications réunis dans un outil simple, adaptable et accompagné.",
+      "One Data réunit clients, opportunités, stock VO/VN et communications dans un seul CRM pour les concessions. Formez votre équipe en 14 jours. Adapté à votre métier sous 24h.",
     type: "website",
     locale: "fr_FR",
   },
