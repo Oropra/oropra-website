@@ -14,6 +14,7 @@ const modules = [
   { title: "Communications unifiées", desc: "Appel VOIP, WhatsApp, SMS, email. Tous les échanges sont rattachés à la fiche client, automatiquement. Plus de \"il m'a appelé sur mon perso, je sais plus quand\".", icon: "💬", topColor: "bg-accent-light" },
   { title: "Devis & BDC", desc: "Génération depuis la fiche opportunité, modèles personnalisables par marque, signature électronique, suivi du cycle de vie du document.", icon: "📄", topColor: "bg-service-green" },
   { title: "Tableaux de bord", desc: "Marge VO, taux de transformation par vendeur, stock dormant à plus de 60 jours, leads non traités à J+1. Pour la direction comme pour les chefs des ventes.", icon: "📊", topColor: "bg-service-blue" },
+  { title: "Delco, le copilote IA", desc: "Un agent IA qui surveille votre activité, vous suggère vos prochaines actions et répond à vos questions en langage naturel. Adapté à votre rôle. Disponible avec le plan Intelligence.", icon: "🤖", topColor: "bg-[#2a5ea9]", badge: "Plan Intelligence" },
 ];
 
 export default function SolutionPage() {
@@ -51,7 +52,7 @@ export default function SolutionPage() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-bold text-text-emphasis mb-3">
-              Six modules. Tous inclus. Tous connectés entre eux.
+              Sept modules. Connectés entre eux. Couvrant tout le métier.
             </h2>
           </motion.div>
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -63,7 +64,12 @@ export default function SolutionPage() {
               >
                 <div className={`absolute top-0 left-0 right-0 h-1 ${m.topColor}`} />
                 <span className="text-3xl mb-4 block">{m.icon}</span>
-                <h3 className="font-bold text-text-emphasis mb-2">{m.title}</h3>
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <h3 className="font-bold text-text-emphasis">{m.title}</h3>
+                  {"badge" in m && m.badge && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[rgba(42,94,169,0.1)] text-[#2a5ea9]">{m.badge}</span>
+                  )}
+                </div>
                 <p className="text-sm text-text-subtle leading-relaxed">{m.desc}</p>
               </motion.div>
             ))}
@@ -102,7 +108,40 @@ export default function SolutionPage() {
         </motion.div>
       </SectionWrapper>
 
+      {/* DELCO ZOOM */}
       <SectionWrapper bg="base">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
+          <motion.div variants={fadeUp} className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              <h2 className="text-3xl font-bold text-text-emphasis">
+                Et au-dessus de tout ça, une IA qui vous fait gagner les heures de tableur.
+              </h2>
+            </div>
+            <p className="text-sm text-text-faint italic mb-4">Disponible avec le plan Intelligence.</p>
+            <p className="text-text-subtle leading-relaxed mb-6">
+              Delco est un agent IA branché sur l&apos;ensemble de votre activité One Data. Il surveille, il analyse, il vous remonte ce qui mérite votre attention. Sa particularité : il s&apos;adapte à votre rôle. Le vendeur, le chef des ventes et le directeur ne voient pas la même chose. Même agent, trois intelligences.
+            </p>
+            <ul className="space-y-3 mb-6">
+              {[
+                { label: "Surveillance en continu", body: "signaux actionnables remontés par rôle (leads sans action, propales qui dorment, sites qui décrochent)" },
+                { label: "Recherche conversationnelle", body: "\"Combien de VO de plus de 180 jours ?\" — réponse immédiate" },
+                { label: "Pilotage à la demande", body: "brief du matin, synthèse pipeline, comparaison de sites" },
+                { label: "Exports PDF / Excel", body: "tout résultat de Delco s'exporte en un clic, prêt à partager" },
+              ].map((item) => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-[#2a5ea9] shrink-0 mt-1.5" />
+                  <span className="text-text-secondary"><strong>{item.label}</strong> : {item.body}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="font-semibold text-text-emphasis">
+              Une heure de comité de direction préparée en 30 secondes.
+            </p>
+          </motion.div>
+        </motion.div>
+      </SectionWrapper>
+
+      <SectionWrapper bg="white">
         <motion.div
           initial="hidden"
           whileInView="show"
