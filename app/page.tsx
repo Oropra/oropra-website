@@ -26,36 +26,6 @@ export default function Home() {
           <source src="/images/reflet-metal-gauche.mov" type="video/quicktime" />
         </video>
 
-        {/* D — floating module pills */}
-        <div className="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
-          {[
-            { label: "Fiche client", x: "6%", y: "22%", delay: "0s", rot: "-3deg", op: "0.45" },
-            { label: "Stock VO/VN", x: "78%", y: "18%", delay: "1.2s", rot: "2deg", op: "0.40" },
-            { label: "Appels VOIP", x: "4%", y: "62%", delay: "2.1s", rot: "-2deg", op: "0.38" },
-            { label: "WhatsApp", x: "80%", y: "58%", delay: "0.7s", rot: "3deg", op: "0.42" },
-            { label: "Opportunités", x: "10%", y: "82%", delay: "1.6s", rot: "-1deg", op: "0.35" },
-            { label: "Delco IA", x: "75%", y: "78%", delay: "0.4s", rot: "2deg", op: "0.45" },
-          ].map((pill) => (
-            <span
-              key={pill.label}
-              className="absolute text-[11px] font-semibold text-white/80 border border-white/20 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full"
-              style={{
-                left: pill.x,
-                top: pill.y,
-                animationName: "float-gentle",
-                animationDuration: "4s",
-                animationTimingFunction: "ease-in-out",
-                animationIterationCount: "infinite",
-                animationDelay: pill.delay,
-                ["--float-rot" as string]: pill.rot,
-                ["--float-op" as string]: pill.op,
-              }}
-            >
-              {pill.label}
-            </span>
-          ))}
-        </div>
-
         <div className="relative max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
             <motion.p
@@ -201,76 +171,23 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="flex items-center justify-center" aria-hidden="true">
-            <svg viewBox="0 0 420 330" className="w-full max-w-[420px]" role="img" aria-label="Constellation des 7 modules One Data">
-              <defs>
-                <style>{`
-                  .dash-line { stroke-dasharray: 5 7; animation: dash-flow 2.4s linear infinite; }
-                  .dash-line-slow { stroke-dasharray: 5 7; animation: dash-flow 3.2s linear infinite; }
-                  .dash-line-med { stroke-dasharray: 5 7; animation: dash-flow 2.8s linear infinite; }
-                  .hub-ring { animation: pulse-ring 2.4s ease-out infinite; }
-                `}</style>
-              </defs>
-
-              {/* connecting lines */}
-              <line x1="210" y1="165" x2="325" y2="165" className="dash-line" stroke="#2557a1" strokeWidth="1.5" strokeOpacity="0.35" />
-              <line x1="210" y1="165" x2="267" y2="258" className="dash-line-med" stroke="#32afa4" strokeWidth="1.5" strokeOpacity="0.35" />
-              <line x1="210" y1="165" x2="153" y2="258" className="dash-line-slow" stroke="#f59e0b" strokeWidth="1.5" strokeOpacity="0.35" />
-              <line x1="210" y1="165" x2="95" y2="165" className="dash-line" stroke="#5882c4" strokeWidth="1.5" strokeOpacity="0.35" />
-              <line x1="210" y1="165" x2="153" y2="72" className="dash-line-med" stroke="#2557a1" strokeWidth="1.5" strokeOpacity="0.35" />
-              <line x1="210" y1="165" x2="267" y2="72" className="dash-line-slow" stroke="#8b5cf6" strokeWidth="1.5" strokeOpacity="0.35" />
-
-              {/* hub pulse ring */}
-              <circle cx="210" cy="165" r="28" fill="none" stroke="#2557a1" strokeWidth="1" strokeOpacity="0.25" className="hub-ring" />
-
-              {/* center hub — Référentiel client */}
-              <circle cx="210" cy="165" r="38" fill="#2557a1" fillOpacity="0.12" stroke="#2557a1" strokeWidth="1.5" />
-              <circle cx="210" cy="165" r="26" fill="#2557a1" />
-              <text x="210" y="162" textAnchor="middle" fill="white" fontSize="11" fontWeight="700" dy="0">Référentiel</text>
-              <text x="210" y="175" textAnchor="middle" fill="white" fontSize="11" fontWeight="700">client</text>
-
-              {/* satellite 1 — right — Opportunités */}
-              <circle cx="325" cy="165" r="30" fill="#32afa4" fillOpacity="0.12" stroke="#32afa4" strokeWidth="1.5" />
-              <circle cx="325" cy="165" r="20" fill="#32afa4" />
-              <text x="325" y="200" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Opportunités</text>
-              <text x="325" y="211" textAnchor="middle" fill="#4a6e90" fontSize="9" fontWeight="500">&amp; Relances</text>
-              <text x="325" y="165" textAnchor="middle" fill="white" fontSize="14" dy="4">🎯</text>
-
-              {/* satellite 2 — bottom-right — Communications */}
-              <circle cx="267" cy="258" r="30" fill="#32afa4" fillOpacity="0.10" stroke="#32afa4" strokeWidth="1.5" />
-              <circle cx="267" cy="258" r="20" fill="#32afa4" fillOpacity="0.85" />
-              <text x="267" y="293" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Communi-</text>
-              <text x="267" y="304" textAnchor="middle" fill="#4a6e90" fontSize="9" fontWeight="500">cations</text>
-              <text x="267" y="258" textAnchor="middle" fill="white" fontSize="14" dy="4">💬</text>
-
-              {/* satellite 3 — bottom-left — Stock */}
-              <circle cx="153" cy="258" r="30" fill="#f59e0b" fillOpacity="0.10" stroke="#f59e0b" strokeWidth="1.5" />
-              <circle cx="153" cy="258" r="20" fill="#f59e0b" />
-              <text x="153" y="293" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Stock</text>
-              <text x="153" y="304" textAnchor="middle" fill="#4a6e90" fontSize="9" fontWeight="500">VO / VN</text>
-              <text x="153" y="258" textAnchor="middle" fill="white" fontSize="14" dy="4">🚗</text>
-
-              {/* satellite 4 — left — Tableaux de bord */}
-              <circle cx="95" cy="165" r="30" fill="#5882c4" fillOpacity="0.10" stroke="#5882c4" strokeWidth="1.5" />
-              <circle cx="95" cy="165" r="20" fill="#5882c4" />
-              <text x="95" y="200" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Tableaux</text>
-              <text x="95" y="211" textAnchor="middle" fill="#4a6e90" fontSize="9" fontWeight="500">de bord</text>
-              <text x="95" y="165" textAnchor="middle" fill="white" fontSize="14" dy="4">📊</text>
-
-              {/* satellite 5 — top-left — Devis & BDC */}
-              <circle cx="153" cy="72" r="30" fill="#2557a1" fillOpacity="0.10" stroke="#2557a1" strokeWidth="1.5" />
-              <circle cx="153" cy="72" r="20" fill="#2557a1" fillOpacity="0.8" />
-              <text x="153" y="37" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Devis</text>
-              <text x="153" y="48" textAnchor="middle" fill="#4a6e90" fontSize="9" fontWeight="500">&amp; BDC</text>
-              <text x="153" y="72" textAnchor="middle" fill="white" fontSize="14" dy="4">📄</text>
-
-              {/* satellite 6 — top-right — Delco IA */}
-              <circle cx="267" cy="72" r="30" fill="#8b5cf6" fillOpacity="0.12" stroke="#8b5cf6" strokeWidth="1.5" />
-              <circle cx="267" cy="72" r="20" fill="#8b5cf6" />
-              <text x="267" y="37" textAnchor="middle" fill="#1c3a5c" fontSize="9.5" fontWeight="600">Delco IA</text>
-              <text x="267" y="48" textAnchor="middle" fill="#8b5cf6" fontSize="8" fontWeight="600">Intelligence</text>
-              <text x="267" y="72" textAnchor="middle" fill="white" fontSize="14" dy="4">🤖</text>
-            </svg>
+          <motion.div variants={fadeUp} className="space-y-3">
+            {[
+              { label: "Clients & Historique", color: "bg-service-blue" },
+              { label: "Opportunités & Relances", color: "bg-service-green" },
+              { label: "Stock VO / VN", color: "bg-service-orange" },
+              { label: "Communications unifiées", color: "bg-accent-light" },
+              { label: "Tableaux de bord", color: "bg-service-green" },
+            ].map((mod, i) => (
+              <div
+                key={mod.label}
+                className="bg-white border border-border-default rounded-xl px-5 py-4 flex items-center gap-3 relative overflow-hidden"
+              >
+                <div className={`w-1.5 h-full absolute left-0 top-0 ${mod.color}`} />
+                <span className="font-medium text-text-primary text-sm ml-2">{mod.label}</span>
+                <span className="text-xs text-text-faint ml-auto">Module {i + 1}</span>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </SectionWrapper>
@@ -472,22 +389,20 @@ export default function Home() {
             </Button>
           </motion.div>
 
-          <motion.div variants={stagger} className="relative pl-8">
-            <div className="absolute left-3 top-4 bottom-4 w-px bg-border-default" aria-hidden="true" />
+          <motion.div variants={stagger} className="grid grid-cols-2 gap-4">
             {[
-              { step: "S1", label: "Semaine 1", desc: "Prise en main de l'outil sur vos données réelles. Fiche client, stock, premières opportunités.", color: "bg-service-blue", textColor: "text-service-blue" },
-              { step: "S2-3", label: "Semaines 2–3", desc: "Routines quotidiennes : relances, RPV, communications centralisées. Chacun dans son rôle.", color: "bg-service-green", textColor: "text-service-green" },
-              { step: "S4", label: "Semaine 4", desc: "Tableaux de bord, reporting direction. Point d'ajustement avec votre référent Oropra.", color: "bg-service-orange", textColor: "text-service-orange" },
-              { step: "J+15", label: "J+15 — L'outil est naturel", desc: "Pas testé. Pas en cours d'adoption. Utilisé.", color: "bg-accent-default", textColor: "text-accent-default", highlight: true },
+              { label: "1 heure par jour, par utilisateur", icon: "📈" },
+              { label: "Formation sur leurs vraies données, pas sur un environnement de démo", icon: "⏱" },
+              { label: "Présentiel ou visio, selon ce qui marche pour vous", icon: "🤝" },
+              { label: "À J+15, l'outil est utilisé. Pas testé. Utilisé.", icon: "✅" },
             ].map((item) => (
-              <motion.div key={item.step} variants={fadeUp} className="relative mb-6 last:mb-0">
-                <div className={`absolute -left-8 w-6 h-6 rounded-full ${item.color} flex items-center justify-center shrink-0 ring-4 ring-bg-white`}>
-                  <span className="text-[9px] font-bold text-white leading-none">{item.step.length > 2 ? "✓" : item.step}</span>
-                </div>
-                <div className={`rounded-[12px] px-5 py-4 border ${item.highlight ? "border-accent-border bg-accent-subtle" : "border-border-light bg-bg-base"}`}>
-                  <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${item.textColor}`}>{item.label}</p>
-                  <p className="text-sm text-text-secondary leading-relaxed">{item.desc}</p>
-                </div>
+              <motion.div
+                key={item.label}
+                variants={fadeUp}
+                className="bg-bg-base rounded-[14px] p-5 border border-border-light text-center"
+              >
+                <span className="text-2xl mb-2 block">{item.icon}</span>
+                <p className="text-sm font-semibold text-text-primary">{item.label}</p>
               </motion.div>
             ))}
           </motion.div>
