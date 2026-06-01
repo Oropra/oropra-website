@@ -9,20 +9,21 @@ import ServiceTag from "@/components/ui/ServiceTag";
 export default function SupportPage() {
   return (
     <>
-      <section className="relative pt-[140px] pb-[100px] px-4 bg-[#3a6bbb] overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
+      <section className="relative pt-[140px] pb-[100px] px-4 bg-[#091525] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_80%_-5%,rgba(50,175,164,0.14)_0%,rgba(37,87,161,0.22)_45%,transparent_70%)] pointer-events-none" />
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none">
           <source src="/images/reflet-metal-gauche.mp4" type="video/mp4" />
           <source src="/images/reflet-metal-gauche.mov" type="video/quicktime" />
         </video>
         <div className="relative max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
-            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 pt-1.5 pb-1 rounded-full">
+            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-service-green uppercase tracking-[1.2px] bg-service-green/15 inline-block px-3.5 pt-1.5 pb-1 rounded-full">
               Support
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
               Le support, c&apos;est nous. Pas un centre d&apos;appel à l&apos;autre bout du monde.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
+            <motion.p variants={fadeUp} className="text-[17px] text-white/65 leading-[1.58] max-w-[660px]">
               Vous parlez à des gens qui connaissent votre concession, votre paramétrage, vos vendeurs. Le support One Data, c&apos;est l&apos;équipe qui vous a formés au démarrage. Pas un ticket dans une file d&apos;attente.
             </motion.p>
           </motion.div>

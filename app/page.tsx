@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-[140px] pb-[100px] px-4 bg-accent-default overflow-hidden">
-        {/* Video background */}
+      <section className="relative pt-[140px] pb-[100px] px-4 bg-[#091525] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_80%_-5%,rgba(50,175,164,0.14)_0%,rgba(37,87,161,0.22)_45%,transparent_70%)] pointer-events-none" />
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none"
         >
           <source src="/images/reflet-metal-gauche.mp4" type="video/mp4" />
           <source src="/images/reflet-metal-gauche.mov" type="video/quicktime" />
@@ -30,7 +30,7 @@ export default function Home() {
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
             <motion.p
               variants={fadeUp}
-              className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 pt-1.5 pb-1 rounded-full"
+              className="text-[11px] font-semibold text-service-green uppercase tracking-[1.2px] bg-service-green/15 inline-block px-3.5 pt-1.5 pb-1 rounded-full"
             >
               CRM no-code pour concessions
             </motion.p>
@@ -42,7 +42,7 @@ export default function Home() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]"
+              className="text-[17px] text-white/65 leading-[1.58] max-w-[660px]"
             >
               One Data réunit clients, prospects, stock VO/VN et toutes les communications (appels, WhatsApp, SMS, emails) dans un seul outil. Vos équipes sont formées une heure par jour pendant 14 jours. Au bout de deux semaines, tout le monde s&apos;en sert.
             </motion.p>
@@ -59,6 +59,23 @@ export default function Home() {
               </Button>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* STATS STRIP */}
+      <section className="bg-[#060e18] border-b border-white/5 py-8 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          {[
+            { value: "80 %", label: "des demandes traitées en moins de 24h" },
+            { value: "14 jours", label: "pour former toute l'équipe" },
+            { value: "J+15", label: "l'outil est utilisé, pas juste installé" },
+            { value: "7", label: "modules, tous inclus, tous connectés" },
+          ].map((stat) => (
+            <div key={stat.value} className="flex flex-col items-center gap-1">
+              <span className="text-3xl font-bold text-white">{stat.value}</span>
+              <span className="text-xs text-white/45 leading-snug max-w-[140px]">{stat.label}</span>
+            </div>
+          ))}
         </div>
       </section>
 

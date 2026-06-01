@@ -14,14 +14,14 @@
   --color-border-strong: #bbc8d6;
   --color-border-accent: #9abbd8;
 
-  /* Text */
+  /* Text — gamme navy→gris neutre (bleu réservé aux éléments interactifs) */
   --color-text-on-accent: #ffffff;
-  --color-text-faint: #8fabc6;
-  --color-text-disabled: #baced9;
-  --color-text-subtle: #4978b3;
-  --color-text-secondary: #2557a1;
-  --color-text-primary: #2557a1;
-  --color-text-emphasis: #2557a1;
+  --color-text-faint: #7b98b4;
+  --color-text-disabled: #b0c4d4;
+  --color-text-subtle: #4a6e90;
+  --color-text-secondary: #1c3a5c;
+  --color-text-primary: #0f2135;
+  --color-text-emphasis: #060d17;
 
   /* Accent bleu */
   --color-accent-subtle: #eef3fc;
@@ -60,7 +60,7 @@
 
   /* Typography */
   --font-sans: var(--font-nunito), sans-serif;
-  --font-weight-bold: 600;
+  --font-weight-bold: 700;
 
   /* Border radius */
   --radius-btn: 9px;
@@ -75,7 +75,7 @@
 
 body {
   background-color: #ffffff;
-  color: #2557a1;
+  color: #0f2135;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

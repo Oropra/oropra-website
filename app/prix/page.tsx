@@ -70,20 +70,21 @@ const plans = [
 export default function PrixPage() {
   return (
     <>
-      <section className="relative pt-[140px] pb-[100px] px-4 bg-[#3a6bbb] overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
+      <section className="relative pt-[140px] pb-[100px] px-4 bg-[#091525] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_80%_-5%,rgba(50,175,164,0.14)_0%,rgba(37,87,161,0.22)_45%,transparent_70%)] pointer-events-none" />
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none">
           <source src="/images/reflet-metal-gauche.mp4" type="video/mp4" />
           <source src="/images/reflet-metal-gauche.mov" type="video/quicktime" />
         </video>
         <div className="relative max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
-            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 pt-1.5 pb-1 rounded-full">
+            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-service-green uppercase tracking-[1.2px] bg-service-green/15 inline-block px-3.5 pt-1.5 pb-1 rounded-full">
               Tarifs
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
               Des prix simples. Affichés. Sans piège.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-[17px] text-bg-elevated leading-[1.58] max-w-[660px]">
+            <motion.p variants={fadeUp} className="text-[17px] text-white/65 leading-[1.58] max-w-[660px]">
               On affiche nos tarifs. Pas de &quot;nous consulter&quot; sur la page d&apos;accueil. Vous pouvez calculer ce que ça va vous coûter avant même de prendre rendez-vous.
             </motion.p>
           </motion.div>
@@ -101,28 +102,32 @@ export default function PrixPage() {
               <motion.div
                 key={plan.name}
                 variants={fadeUp}
-                className="rounded-[14px] p-7 border border-border-light bg-white shadow-[var(--shadow-default)] flex flex-col relative overflow-hidden"
+                className={`rounded-[14px] p-7 flex flex-col relative overflow-hidden ${
+                  plan.featured
+                    ? "bg-[#091525] border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.35)]"
+                    : "border border-border-light bg-white shadow-[var(--shadow-default)]"
+                }`}
               >
-                <div className={`absolute top-0 left-0 right-0 h-1.5 ${plan.topColor}`} />
+                {!plan.featured && <div className={`absolute top-0 left-0 right-0 h-1.5 ${plan.topColor}`} />}
                 {plan.featured && (
-                  <span className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-service-green/10 text-service-green">
+                  <span className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-service-green/20 text-service-green">
                     Le plus populaire
                   </span>
                 )}
-                <h3 className="text-xl font-bold mb-1 text-text-emphasis">{plan.name}</h3>
-                <p className="text-xs text-text-faint mb-3">{plan.tagline}</p>
-                <p className="text-2xl font-bold text-accent-default mb-0.5">{plan.price}</p>
-                <p className="text-xs text-text-faint mb-4">{plan.priceNote}</p>
-                <p className="text-sm leading-relaxed mb-6 text-text-subtle">{plan.desc}</p>
+                <h3 className={`text-xl font-bold mb-1 ${plan.featured ? "text-white" : "text-text-emphasis"}`}>{plan.name}</h3>
+                <p className={`text-xs mb-3 ${plan.featured ? "text-white/45" : "text-text-faint"}`}>{plan.tagline}</p>
+                <p className={`text-2xl font-bold mb-0.5 ${plan.featured ? "text-service-green" : "text-accent-default"}`}>{plan.price}</p>
+                <p className={`text-xs mb-4 ${plan.featured ? "text-white/40" : "text-text-faint"}`}>{plan.priceNote}</p>
+                <p className={`text-sm leading-relaxed mb-6 ${plan.featured ? "text-white/60" : "text-text-subtle"}`}>{plan.desc}</p>
                 <ul className="space-y-2.5 mb-8 flex-1">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-accent-default" />
-                      <span className="text-text-secondary">{f}</span>
+                      <CheckCircle2 size={16} className={`mt-0.5 shrink-0 ${plan.featured ? "text-service-green" : "text-accent-default"}`} />
+                      <span className={plan.featured ? "text-white/70" : "text-text-secondary"}>{f}</span>
                     </li>
                   ))}
                 </ul>
-                <Button variant="primary" size="md" href="mailto:bienvenue@oropra.com">
+                <Button variant={plan.featured ? "primary-dark" : "primary"} size="md" href="mailto:bienvenue@oropra.com">
                   {plan.cta}
                 </Button>
               </motion.div>
