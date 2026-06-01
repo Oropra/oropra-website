@@ -80,8 +80,8 @@ export default function SolutionPage() {
 
       {/* COMMUNICATION UNIFIÉE — ZOOM */}
       <SectionWrapper bg="white">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
-          <motion.div variants={fadeUp} className="max-w-3xl mx-auto">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <motion.div variants={fadeUp}>
             <h2 className="text-3xl font-bold text-text-emphasis mb-6">
               La fonctionnalité que personne d&apos;autre ne fait correctement.
             </h2>
@@ -105,6 +105,52 @@ export default function SolutionPage() {
             <p className="font-semibold text-text-emphasis">
               Quand un vendeur part, l&apos;historique reste. Quand un client rappelle, la fiche s&apos;ouvre.
             </p>
+          </motion.div>
+
+          {/* B — Comm flow diagram */}
+          <motion.div variants={fadeUp} className="flex items-center justify-center" aria-hidden="true">
+            <svg viewBox="0 0 320 280" className="w-full max-w-[320px]" role="img" aria-label="Schéma de convergence des canaux de communication vers la fiche client">
+              <defs>
+                <style>{`
+                  .comm-line { stroke-dasharray: 5 6; animation: dash-flow 2s linear infinite; }
+                  .comm-line-2 { stroke-dasharray: 5 6; animation: dash-flow 2.5s linear infinite; }
+                  .comm-line-3 { stroke-dasharray: 5 6; animation: dash-flow 1.8s linear infinite; }
+                  .comm-line-4 { stroke-dasharray: 5 6; animation: dash-flow 2.3s linear infinite; }
+                `}</style>
+                <linearGradient id="ficheGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#2557a1" stopOpacity="0.08" />
+                  <stop offset="100%" stopColor="#2557a1" stopOpacity="0.04" />
+                </linearGradient>
+              </defs>
+
+              {/* channel nodes (left side) */}
+              {[
+                { y: 44,  label: "VOIP", icon: "📞", color: "#2557a1", lineClass: "comm-line" },
+                { y: 108, label: "WhatsApp", icon: "💬", color: "#25d366", lineClass: "comm-line-2" },
+                { y: 172, label: "SMS", icon: "📱", color: "#f59e0b", lineClass: "comm-line-3" },
+                { y: 236, label: "Email", icon: "✉️", color: "#5882c4", lineClass: "comm-line-4" },
+              ].map((ch) => (
+                <g key={ch.label}>
+                  <rect x="8" y={ch.y - 22} width="88" height="44" rx="10" fill="white" stroke={ch.color} strokeWidth="1.5" strokeOpacity="0.5" />
+                  <text x="52" y={ch.y - 4} textAnchor="middle" fontSize="14">{ch.icon}</text>
+                  <text x="52" y={ch.y + 12} textAnchor="middle" fill="#1c3a5c" fontSize="10" fontWeight="600">{ch.label}</text>
+                  {/* converging line to midpoint */}
+                  <line x1="96" y1={ch.y} x2="188" y2="140" className={ch.lineClass} stroke={ch.color} strokeWidth="1.5" strokeOpacity="0.5" />
+                </g>
+              ))}
+
+              {/* Fiche client card (right) */}
+              <rect x="188" y="88" width="120" height="104" rx="12" fill="url(#ficheGrad)" stroke="#2557a1" strokeWidth="2" />
+              <rect x="188" y="88" width="120" height="28" rx="12" fill="#2557a1" />
+              <rect x="188" y="104" width="120" height="12" rx="0" fill="#2557a1" />
+              <text x="248" y="107" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">Fiche client</text>
+
+              {/* card content rows */}
+              <rect x="202" y="128" width="92" height="7" rx="3.5" fill="#dfe6f0" />
+              <rect x="202" y="141" width="68" height="7" rx="3.5" fill="#dfe6f0" />
+              <rect x="202" y="154" width="80" height="7" rx="3.5" fill="#dfe6f0" />
+              <rect x="202" y="167" width="54" height="7" rx="3.5" fill="#eef3fc" />
+            </svg>
           </motion.div>
         </motion.div>
       </SectionWrapper>
