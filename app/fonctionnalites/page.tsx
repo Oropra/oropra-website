@@ -147,7 +147,7 @@ export default function FonctionnalitesPage() {
                       <p className="text-text-subtle leading-relaxed">{f.desc}</p>
                     </div>
                     <div className="space-y-4">
-                      {f.pillars.map((p) => (
+                      {(f.pillars ?? []).map((p) => (
                         <div key={p.title} className="bg-bg-base rounded-xl px-4 py-4 border border-border-light">
                           <p className="font-semibold text-text-emphasis mb-1 text-sm">{p.title}</p>
                           <p className="text-sm text-text-subtle leading-relaxed">{p.body}</p>
@@ -158,7 +158,7 @@ export default function FonctionnalitesPage() {
                   <div className="bg-bg-base rounded-xl px-5 py-4 border border-border-light">
                     <p className="text-xs font-semibold text-text-faint uppercase tracking-wider mb-3">Ce que Delco ne fait pas</p>
                     <ul className="space-y-2">
-                      {f.transparency.map((t) => (
+                      {(f.transparency ?? []).map((t) => (
                         <li key={t} className="flex items-start gap-2.5 text-sm text-text-subtle">
                           <span className="w-1.5 h-1.5 rounded-full bg-border-strong shrink-0 mt-1.5" />
                           {t}
