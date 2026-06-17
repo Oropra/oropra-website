@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { articles } from "@/content/articles";
 
 const base = "https://onedata.fr";
 
@@ -21,10 +22,17 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return routes.map((r) => ({
+  const staticRoutes: MetadataRoute.Sitemap = routes.map((r) => ({
     url: `${base}${r}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: r === "" ? 1 : 0.7,
   }));
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${base}/ressources/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: "yearly",
+    priority: 0.5,
+  }));
+  return [...staticRoutes, ...articleRoutes];
 }
