@@ -50,7 +50,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="container hero-grid">
-          <Reveal>
+          <div>
             <div className="hero-badge">
               <span className="hero-badge-dot" />
               En cours de déploiement sur les premiers sites pilotes
@@ -85,9 +85,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.1}>
+          <div>
             <VideoBlock
               variant="hero"
               src="/videos/features/01-referentiel-client.mp4"
@@ -96,7 +96,7 @@ export default function Home() {
               duration="0:60"
               label="Vidéo : la fiche client en action"
             />
-          </Reveal>
+          </div>
         </div>
       </section>
 

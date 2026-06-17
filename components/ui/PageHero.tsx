@@ -1,4 +1,3 @@
-import Reveal from "./Reveal";
 import Eyebrow from "./Eyebrow";
 import Button from "./Button";
 
@@ -49,7 +48,7 @@ export default function PageHero({
       style={dark ? { background: "var(--ink)", borderBottom: "none" } : undefined}
     >
       <div className={visual ? "container hero-grid" : "container-tight"}>
-        <Reveal>
+        <div>
           {eyebrow && (
             <Eyebrow color={eyebrowColor} dark={dark}>
               {eyebrow}
@@ -70,8 +69,8 @@ export default function PageHero({
             </p>
           )}
           {ctas}
-        </Reveal>
-        {visual && <Reveal delay={0.1}>{visual}</Reveal>}
+        </div>
+        {visual && <div>{visual}</div>}
       </div>
     </section>
   );
