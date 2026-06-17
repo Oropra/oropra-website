@@ -35,6 +35,7 @@ export default function VideoBlock({
 }: VideoBlockProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
+  const [posterFailed, setPosterFailed] = useState(false);
 
   useEffect(() => {
     if (failed) return;
@@ -59,13 +60,24 @@ export default function VideoBlock({
       {duration && <span className="video-duration">{duration}</span>}
 
       {failed ? (
-        <div className="video-placeholder">
-          <div className="video-placeholder-icon" aria-hidden="true">
-            <Play size={22} fill="currentColor" />
+        poster && !posterFailed ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={poster}
+            alt={label}
+            className="video-poster-img"
+            loading="lazy"
+            onError={() => setPosterFailed(true)}
+          />
+        ) : (
+          <div className="video-placeholder">
+            <div className="video-placeholder-icon" aria-hidden="true">
+              <Play size={22} fill="currentColor" />
+            </div>
+            <div className="video-placeholder-label">{label}</div>
+            <div className="video-placeholder-sub">{sub}</div>
           </div>
-          <div className="video-placeholder-label">{label}</div>
-          <div className="video-placeholder-sub">{sub}</div>
-        </div>
+        )
       ) : (
         <video
           ref={videoRef}

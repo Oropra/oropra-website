@@ -244,6 +244,12 @@ nav.top {
   object-fit: cover;
   display: block;
 }
+.video-poster-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .video-placeholder {
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
