@@ -1,82 +1,76 @@
-import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = [
+const cols = [
   {
-    title: "Produit",
+    title: "Plateforme",
     links: [
-      { label: "La Solution", href: "/solution" },
-      { label: "Fonctionnalités", href: "/fonctionnalites" },
-      { label: "Pour l'équipe", href: "/equipe" },
-      { label: "Prix", href: "/prix" },
+      { href: "/donnee-propre", label: "La donnée propre" },
+      { href: "/relation-client", label: "La relation client" },
+      { href: "/management", label: "Le management commercial" },
+      { href: "/delco", label: "Delco, l'IA métier" },
     ],
   },
   {
-    title: "Ressources",
+    title: "Adoption",
     links: [
-      { label: "Blog & Guides", href: "/ressources" },
-      { label: "Support", href: "/support" },
-      { label: "À propos", href: "/a-propos" },
+      { href: "/adoption#formation", label: "Formation 14 jours" },
+      { href: "/adoption#montre-moi", label: '"Montre-moi"' },
+      { href: "/adoption#centre-aide", label: "Centre d'aide" },
+      { href: "/adoption#support", label: "Support humain" },
     ],
   },
   {
-    title: "Contact",
+    title: "Entreprise",
     links: [
-      { label: "Demander une démo", href: "mailto:bienvenue@oropra.com" },
-      { label: "bienvenue@oropra.com", href: "mailto:bienvenue@oropra.com" },
+      { href: "/a-propos", label: "À propos" },
+      { href: "/ressources", label: "Ressources" },
+      { href: "/prix", label: "Prix" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Légal",
+    links: [
+      { href: "/mentions-legales", label: "Mentions légales" },
+      { href: "/cgv", label: "CGV" },
+      { href: "/rgpd", label: "RGPD" },
     ],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-base border-t border-border-light">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <Link href="/">
-              <Image
-                src="/images/logo-oropra.svg"
-                alt="Oropra"
-                width={110}
-                height={33}
-              />
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div>
+            <Link href="/" className="logo" aria-label="One Data — accueil">
+              <span className="logo-mark" />
+              One Data
             </Link>
-            <p className="mt-4 text-sm text-text-subtle leading-relaxed">
-              Conseil en architecture de la donnée, CRM no-code & intégration IA.
+            <p className="footer-brand-desc">
+              Le CRM des concessions auto, fait pour être utilisé tous les jours.
+              Édité par Oropra.
             </p>
           </div>
 
-          {/* Links */}
-          {footerLinks.map((col) => (
+          {cols.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-text-faint mb-4">
-                {col.title}
-              </h3>
-              <ul className="space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-text-primary hover:text-text-emphasis transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+              <div className="footer-col-title">{col.title}</div>
+              <div className="footer-links">
+                {col.links.map((l) => (
+                  <Link key={l.href + l.label} href={l.href}>
+                    {l.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border-default flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-text-faint">
-            © {new Date().getFullYear()} Oropra. Tous droits réservés.
-          </p>
-          <p className="text-xs text-text-faint">
-            Oro = Vision · Pra = Pragmatique
-          </p>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Oropra. Tous droits réservés.</span>
+          <span>Hébergement Europe · Conformité RGPD</span>
         </div>
       </div>
     </footer>
