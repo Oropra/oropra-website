@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { FileText, Download } from "lucide-react";
+import Link from "next/link";
+import { Download, ArrowRight } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHead from "@/components/ui/SectionHead";
 import Reveal from "@/components/ui/Reveal";
 import CtaFinal from "@/components/ui/CtaFinal";
+import { articles } from "@/content/articles";
 
 export const metadata: Metadata = {
   title: "Ressources",
@@ -11,15 +13,6 @@ export const metadata: Metadata = {
     "Blog, guides, roadmap publique et changelog de One Data. Des contenus utiles pour le métier, pas des livres blancs de 80 pages.",
   alternates: { canonical: "/ressources" },
 };
-
-const articles = [
-  "Pourquoi 70 % des CRM auto finissent inutilisés",
-  "Bilatérales : la réunion qui change le mois commercial",
-  "Stock dormant : combien ça coûte vraiment",
-  "Téléphone perso des vendeurs : le risque qu'on sous-estime",
-  "Sources de leads : lesquelles convertissent en concession",
-  "Delco : ce qu'un copilote IA doit faire (et ne pas faire)",
-];
 
 const guides = [
   "Checklist : migrer d'un ancien CRM sans perdre la donnée",
@@ -53,13 +46,19 @@ export default function Ressources() {
       {/* Blog */}
       <section className="section">
         <div className="container">
-          <SectionHead eyebrow="Blog" title="Articles" subtitle="Bientôt en ligne. Voici ce qui arrive." />
+          <SectionHead eyebrow="Blog" title="Articles" subtitle="Des lectures courtes, pensées pour le métier de la concession." />
           <div className="card-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
             {articles.map((a, i) => (
-              <Reveal key={a} delay={i * 0.04} className="feature-card">
-                <div className="feature-card-icon"><FileText size={20} /></div>
-                <div className="feature-card-title" style={{ fontSize: 16 }}>{a}</div>
-                <p className="feature-card-desc" style={{ marginTop: 8, color: "var(--ink-mute)" }}>À venir</p>
+              <Reveal key={a.slug} delay={i * 0.04}>
+                <Link href={`/ressources/${a.slug}`} className="feature-card article-card">
+                  <div className="article-card-cat">{a.category}</div>
+                  <div className="feature-card-title" style={{ fontSize: 17 }}>{a.title}</div>
+                  <p className="feature-card-desc" style={{ marginTop: 8 }}>{a.excerpt}</p>
+                  <div className="article-card-foot">
+                    <span>{a.dateLabel} · {a.readingTime}</span>
+                    <span className="article-card-read">Lire <ArrowRight size={14} /></span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
