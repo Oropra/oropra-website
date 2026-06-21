@@ -20,20 +20,20 @@
   --color-purple: #7c3aed;
   --color-purple-soft: #f3e8ff;
 
-  /* fonds et textes — jamais noir pur */
+  /* fonds et textes — jamais de noir : tout est dérivé du bleu #2a5ea9 */
   --color-paper: #ffffff;
-  --color-paper-soft: #fafafa;
-  --color-paper-card: #f7f7f5;
-  --color-ink: #0f1419;
-  --color-ink-soft: #5c6470;
-  --color-ink-mute: #9098a1;
-  --color-rule: #e8e8e5;
-  --color-rule-strong: #d5d6d2;
+  --color-paper-soft: #f6f8fc;
+  --color-paper-card: #eef3fa;
+  --color-ink: #0e2444;
+  --color-ink-soft: #46587d;
+  --color-ink-mute: #8693ad;
+  --color-rule: #e2e8f2;
+  --color-rule-strong: #cdd7e6;
 
-  /* shadows */
-  --shadow-sm: 0 1px 2px rgba(15, 20, 25, 0.04), 0 1px 1px rgba(15, 20, 25, 0.02);
-  --shadow-md: 0 4px 14px rgba(15, 20, 25, 0.06), 0 1px 4px rgba(15, 20, 25, 0.04);
-  --shadow-lg: 0 12px 40px rgba(15, 20, 25, 0.08), 0 4px 12px rgba(15, 20, 25, 0.04);
+  /* shadows — teinte bleue (jamais de noir) */
+  --shadow-sm: 0 1px 2px rgba(14, 36, 68, 0.05), 0 1px 1px rgba(14, 36, 68, 0.03);
+  --shadow-md: 0 4px 14px rgba(14, 36, 68, 0.08), 0 1px 4px rgba(14, 36, 68, 0.05);
+  --shadow-lg: 0 12px 40px rgba(14, 36, 68, 0.12), 0 4px 12px rgba(14, 36, 68, 0.06);
 
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
@@ -52,17 +52,17 @@
   --rouge-soft: #fce8e8;
 
   --paper: #ffffff;
-  --paper-soft: #fafafa;
-  --paper-card: #f7f7f5;
-  --ink: #0f1419;
-  --ink-soft: #5c6470;
-  --ink-mute: #9098a1;
-  --rule: #e8e8e5;
-  --rule-strong: #d5d6d2;
+  --paper-soft: #f6f8fc;
+  --paper-card: #eef3fa;
+  --ink: #0e2444;
+  --ink-soft: #46587d;
+  --ink-mute: #8693ad;
+  --rule: #e2e8f2;
+  --rule-strong: #cdd7e6;
 
-  --shadow-sm: 0 1px 2px rgba(15, 20, 25, 0.04), 0 1px 1px rgba(15, 20, 25, 0.02);
-  --shadow-md: 0 4px 14px rgba(15, 20, 25, 0.06), 0 1px 4px rgba(15, 20, 25, 0.04);
-  --shadow-lg: 0 12px 40px rgba(15, 20, 25, 0.08), 0 4px 12px rgba(15, 20, 25, 0.04);
+  --shadow-sm: 0 1px 2px rgba(14, 36, 68, 0.05), 0 1px 1px rgba(14, 36, 68, 0.03);
+  --shadow-md: 0 4px 14px rgba(14, 36, 68, 0.08), 0 1px 4px rgba(14, 36, 68, 0.05);
+  --shadow-lg: 0 12px 40px rgba(14, 36, 68, 0.12), 0 4px 12px rgba(14, 36, 68, 0.06);
 
   --font: var(--font-inter), system-ui, -apple-system, sans-serif;
   --mono: var(--font-jetbrains), ui-monospace, monospace;
@@ -115,7 +115,7 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.15s, background 0.15s;
   display: inline-flex; align-items: center; gap: 6px;
 }
-.btn-primary:hover { background: #1d2530; transform: translateY(-1px); }
+.btn-primary:hover { background: #0a1b35; transform: translateY(-1px); }
 .btn-primary-lg { padding: 12px 22px; font-size: 15px; }
 .btn-secondary-lg {
   padding: 12px 22px; font-size: 15px; font-weight: 500;
@@ -276,7 +276,7 @@ nav.top {
 }
 .video-tag {
   position: absolute; top: 14px; left: 14px;
-  background: rgba(15, 20, 25, 0.85);
+  background: rgba(14, 36, 68, 0.85);
   color: white;
   padding: 4px 10px;
   border-radius: 4px;
@@ -289,7 +289,7 @@ nav.top {
 }
 .video-duration {
   position: absolute; bottom: 14px; right: 14px;
-  background: rgba(15, 20, 25, 0.85);
+  background: rgba(14, 36, 68, 0.85);
   color: white;
   padding: 3px 8px;
   border-radius: 4px;
@@ -814,7 +814,7 @@ nav.top {
   transition: transform 0.15s, background 0.15s;
 }
 .plan-btn.primary { background: var(--ink); color: white; }
-.plan-btn.primary:hover { transform: translateY(-1px); background: #1d2530; }
+.plan-btn.primary:hover { transform: translateY(-1px); background: #0a1b35; }
 .plan-btn.secondary { background: var(--paper-card); color: var(--ink); border: 1px solid var(--rule); }
 .plan-btn.secondary:hover { background: var(--paper-soft); }
 .plan-incl-title {
@@ -920,7 +920,7 @@ nav.top {
   content: ''; position: absolute;
   top: 16px; left: 50%; transform: translateX(-50%);
   width: 100px; height: 24px;
-  background: #000; border-radius: 12px;
+  background: var(--ink); border-radius: 12px;
   z-index: 2;
 }
 .mock-phone-screen {
