@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/layout/Nav";
-import Footer from "@/components/layout/Footer";
+import { ConditionalNav, ConditionalFooter } from "@/components/layout/ConditionalChrome";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,9 +53,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-oropra.png" />
       </head>
       <body>
-        <Nav />
+        <ConditionalNav />
         <main>{children}</main>
-        <Footer />
+        <ConditionalFooter />
       </body>
     </html>
   );
