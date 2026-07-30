@@ -15,6 +15,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { bootstrapSocleDemo, SocleDemoInstance } from "@/lib/demo-socle";
+import DemoTour from "./DemoTour";
 
 const CONFIG = {
   supabaseUrl: process.env.NEXT_PUBLIC_DEMO_SUPABASE_URL!,
@@ -293,6 +294,9 @@ export default function DemoPlayground() {
           )}
         </>
       )}
+
+      {/* Accompagnement : bouton « Montre-moi » + tours par page */}
+      {status === "ready" && <DemoTour pathname={pathname} />}
 
       <style>{`@keyframes odspin { to { transform: rotate(360deg); } }
         @keyframes odpulse { 0%,100% { transform: scale(1); opacity: .5 } 50% { transform: scale(1.6); opacity: 0 } }
