@@ -137,8 +137,10 @@ export async function bootstrapSocleDemo(
   let turnstileHandle: TurnstileHandle | null = null;
   const turnstileContainer = document.createElement("div");
   turnstileContainer.id = "od-demo-turnstile";
+  // Cloudflare refuse de rendre un widget caché (visibility:hidden/display:none).
+  // On le place discrètement en bas, très petit et peu opaque, mais RENDU.
   turnstileContainer.style.cssText =
-    "position:fixed;bottom:0;left:0;visibility:hidden;pointer-events:none";
+    "position:fixed;right:8px;bottom:8px;z-index:1;opacity:0.5;transform:scale(0.7);transform-origin:bottom right";
   document.body.appendChild(turnstileContainer);
   try {
     turnstileHandle = await renderTurnstile(
@@ -155,7 +157,8 @@ export async function bootstrapSocleDemo(
   //           sans passer par ctx.fn). Modules inchangés.
   const restoreFetch = installFetchPatch({
     sessionId,
-    getTurnstileToken: () => turnstileHandle?.getToken() ?? null,
+    getTurnstileToken: () =>
+      turnstileHandle ? turnstileHandle.waitForToken(8000) : Promise.resolve(null),
   });
   console.log("[socle-démo] ✅ fetch patché (garde-fous Delco)");
 

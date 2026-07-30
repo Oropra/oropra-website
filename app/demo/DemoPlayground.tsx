@@ -187,14 +187,38 @@ export default function DemoPlayground() {
           line-height: revert;
           font-weight: revert;
         }
+        /* Zone principale : large sur desktop, padding réduit sur mobile */
+        .od-pg-main {
+          flex: 1;
+          max-width: 1200px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 16px 24px 60px;
+        }
+        @media (max-width: 640px) {
+          .od-pg-main {
+            padding: 10px 10px 48px;
+          }
+          /* Bandeau démo : masquer le texte central, garder retour + CTA */
+          .od-banner-center {
+            display: none !important;
+          }
+          .od-banner-wrap {
+            padding: 8px 12px !important;
+          }
+          .od-banner-back, .od-banner-link {
+            font-size: 12px !important;
+          }
+        }
       `}</style>
 
+
       {/* Bandeau démo — couleurs One Data */}
-      <div style={banner.wrap}>
-        <a href="/" style={banner.back}>
+      <div className="od-banner-wrap" style={banner.wrap}>
+        <a href="/" className="od-banner-back" style={banner.back}>
           ← Retour au site
         </a>
-        <span style={banner.center}>
+        <span className="od-banner-center" style={banner.center}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo-one-data.svg" alt="One Data" style={{ height: 18, width: "auto", verticalAlign: "middle" }} />
           <span style={{ marginLeft: 8 }}>
@@ -205,6 +229,7 @@ export default function DemoPlayground() {
           href="mailto:bienvenue@oropra.com?subject=Demande%20de%20d%C3%A9mo%20One%20Data&body=Bonjour%2C%0A%0AJe%20souhaite%20une%20d%C3%A9mo%20de%20One%20Data%20sur%20mes%20propres%20donn%C3%A9es.%0A%0AConcession%20%3A%20%0ANombre%20de%20sites%20%3A%20%0ANombre%20d%27utilisateurs%20%3A%20%0AT%C3%A9l%C3%A9phone%20%3A%20%0A%0AMerci%20%21"
           target="_blank"
           rel="noopener noreferrer"
+          className="od-banner-link"
           style={banner.link}
         >
           Demander une vraie démo →
@@ -227,7 +252,7 @@ export default function DemoPlayground() {
       <div data-od-module="topnav" id="nav-root" />
 
       {/* Zone principale — module conteneur de la route courante */}
-      <main style={{ flex: 1, maxWidth: 1200, width: "100%", margin: "0 auto", padding: "16px 24px 60px" }}>
+      <main className="od-pg-main">
         <div key={currentModule} data-od-module={currentModule} />
       </main>
 

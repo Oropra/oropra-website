@@ -12,7 +12,7 @@
 
 export interface FetchPatchOptions {
   sessionId: string;
-  getTurnstileToken: () => string | null;
+  getTurnstileToken: () => Promise<string | null>;
 }
 
 export function installFetchPatch(opts: FetchPatchOptions): () => void {
@@ -37,12 +37,12 @@ export function installFetchPatch(opts: FetchPatchOptions): () => void {
         try {
           parsed = JSON.parse(init.body);
         } catch (_e) {
-          // body non-JSON → on ne touche pas
           return originalFetch(input, init);
         }
 
         parsed.session_id = sessionId;
-        const token = getTurnstileToken();
+        // Attendre activement le token (le widget peut mettre un instant à le produire)
+        const token = await getTurnstileToken();
         if (token) parsed.turnstile_token = token;
 
         const newInit: RequestInit = {
