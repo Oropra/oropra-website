@@ -134,7 +134,7 @@ export default function LandingNarrative() {
           --ink-soft: #5c6470;
           --ink-mute: #9098a1;
           --rule: #ececea;
-          --night: #0a0e14;
+          --night: #16294a;
           --font: "Inter", system-ui, sans-serif;
           --mono: "JetBrains Mono", ui-monospace, monospace;
           font-family: var(--font);
@@ -182,7 +182,7 @@ export default function LandingNarrative() {
           display: block;
         }
         .od-nav-cta {
-          background: var(--ink);
+          background: var(--bleu);
           color: white;
           padding: 10px 20px;
           border-radius: 9px;
@@ -251,7 +251,7 @@ export default function LandingNarrative() {
           justify-content: center;
         }
         .od-btn-primary {
-          background: var(--ink);
+          background: var(--bleu);
           color: white;
           padding: 16px 32px;
           border-radius: 12px;
@@ -453,7 +453,7 @@ export default function LandingNarrative() {
           height: auto;
         }
         .od-delco {
-          background: radial-gradient(circle at 25% 15%, #12294a 0%, var(--night) 58%);
+          background: radial-gradient(circle at 25% 15%, #1d3a63 0%, var(--night) 58%);
           color: white;
           max-width: none;
         }
@@ -588,7 +588,7 @@ export default function LandingNarrative() {
         }
         .od-final-cta {
           margin-top: 42px;
-          background: var(--ink);
+          background: var(--bleu);
           color: white;
           padding: 21px 46px;
           border-radius: 14px;
@@ -658,6 +658,66 @@ export default function LandingNarrative() {
           }
           .od-seq {
             padding: 90px 22px;
+          }
+        }
+        @media (max-width: 600px) {
+          .od-nav {
+            padding: 12px 16px;
+          }
+          .od-nav.scrolled {
+            padding: 10px 16px;
+          }
+          .od-logo img {
+            height: 24px;
+          }
+          .od-nav-cta {
+            padding: 8px 12px;
+            font-size: 12px;
+          }
+          .od-hero {
+            padding: 90px 20px 40px;
+            min-height: auto;
+          }
+          .od-hero h1 {
+            font-size: clamp(34px, 11vw, 46px);
+          }
+          .od-hero-sub {
+            font-size: 16px;
+            margin-top: 24px;
+          }
+          .od-hero-cta {
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+          }
+          .od-hero-cta a {
+            width: 100%;
+            text-align: center;
+          }
+          .od-seq {
+            padding: 70px 18px;
+          }
+          .od-h2 {
+            font-size: clamp(26px, 7vw, 34px);
+          }
+          .od-lead {
+            font-size: 16px;
+          }
+          .od-stat-num {
+            font-size: clamp(34px, 12vw, 46px);
+          }
+          .od-adopt-big {
+            font-size: clamp(52px, 20vw, 90px);
+          }
+          .od-final h2 {
+            font-size: clamp(30px, 9vw, 44px);
+          }
+          .od-final-cta {
+            padding: 17px 32px;
+            font-size: 17px;
+          }
+          .od-shot-bar {
+            height: 26px;
           }
         }
       `}</style>
